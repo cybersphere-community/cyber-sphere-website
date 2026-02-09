@@ -32,18 +32,17 @@ const Events = () => {
 
     return (
         <div className="min-h-screen bg-gray-900 text-white pt-24 pb-16 cyber-grid">
-            <div className="scanline"></div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Upcoming Events Section */}
                 <section className="mb-20">
                     <div className="flex items-center mb-8">
                         <div className="h-8 w-1 bg-gradient-to-b from-cyan-500 to-blue-500 mr-4 rounded-full shadow-[0_0_10px_rgba(0,255,255,0.5)]"></div>
-                        <h1 className="text-3xl font-bold"><span className="gradient-text neon-glow">Upcoming Events</span></h1>
+                        <h1 className="text-3xl font-bold text-white">Upcoming Events</h1>
                     </div>
 
                     <div className="grid gap-8">
                         {upcomingEvents.map((event) => (
-                            <div key={event.id} className="glow-card holographic rounded-2xl p-8 transition-all duration-300 shadow-2xl group">
+                            <div key={event.id} className="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 shadow-xl group">
                                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
                                     <div className="flex-1">
                                         <span className="inline-block px-3 py-1 bg-cyan-900/50 text-cyan-300 text-xs font-semibold rounded-full mb-4 border border-cyan-500/30">
@@ -90,7 +89,7 @@ const Events = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {pastEvents.map((event) => (
-                            <div key={event.id} className="glow-card rounded-xl p-6 transition-all hover:scale-[1.02]">
+                            <div key={event.id} className="bg-gray-800/60 rounded-xl p-6 border border-gray-700 hover:border-gray-600 transition-all hover:scale-[1.02]">
                                 <div className="flex justify-between items-start mb-4">
                                     <span className="text-xs font-medium text-gray-500 uppercase tracking-widest">{event.type}</span>
                                     <span className="text-xs text-gray-500">{event.date}</span>

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -66,40 +64,47 @@ body::before {
 }
 
 /* Circuit Board Pattern */
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image:
-    /* Horizontal lines */
-    linear-gradient(90deg, rgba(14, 165, 233, 0.03) 1px, transparent 1px),
-    linear-gradient(rgba(14, 165, 233, 0.03) 1px, transparent 1px),
-    /* Diagonal lines */
-    linear-gradient(45deg, rgba(6, 182, 212, 0.02) 1px, transparent 1px),
-    linear-gradient(-45deg, rgba(6, 182, 212, 0.02) 1px, transparent 1px),
-    /* Dots pattern */
-    radial-gradient(circle at 25% 25%, rgba(14, 165, 233, 0.05) 2px, transparent 2px),
-    radial-gradient(circle at 75% 75%, rgba(6, 182, 212, 0.05) 2px, transparent 2px);
-  background-size:
-    80px 80px,
-    80px 80px,
-    60px 60px,
-    60px 60px,
-    40px 40px,
-    40px 40px;
-  background-position:
-    0 0,
-    0 0,
-    0 0,
-    0 0,
-    0 0,
-    20px 20px;
-  opacity: 0.4;
-  z-index: -1;
-  animation: circuitMove 20s linear infinite;
+/* Circuit Board Pattern - Optimized for Desktop only */
+@media (min-width: 768px) {
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      /* Horizontal lines */
+      linear-gradient(90deg, rgba(14, 165, 233, 0.03) 1px, transparent 1px),
+      linear-gradient(rgba(14, 165, 233, 0.03) 1px, transparent 1px),
+      /* Diagonal lines */
+      linear-gradient(45deg, rgba(6, 182, 212, 0.02) 1px, transparent 1px),
+      linear-gradient(-45deg, rgba(6, 182, 212, 0.02) 1px, transparent 1px),
+      /* Dots pattern */
+      radial-gradient(circle at 25% 25%, rgba(14, 165, 233, 0.05) 2px, transparent 2px),
+      radial-gradient(circle at 75% 75%, rgba(6, 182, 212, 0.05) 2px, transparent 2px);
+    background-size:
+      80px 80px,
+      80px 80px,
+      60px 60px,
+      60px 60px,
+      40px 40px,
+      40px 40px;
+    background-position:
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      20px 20px;
+    opacity: 0.4;
+    z-index: -1;
+    animation: circuitMove 20s linear infinite;
+    pointer-events: none;
+    /* Ensure clicks pass through */
+    will-change: background-position;
+    /* Hint for GPU acceleration */
+  }
 }
 
 @keyframes circuitMove {

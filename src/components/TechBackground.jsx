@@ -3,8 +3,16 @@ import './TechBackground.css';
 
 const TechBackground = () => {
     useEffect(() => {
+        // Performance optimization: Check if mobile
+        const isMobile = window.innerWidth < 768;
+        const particleCount = isMobile ? 10 : 30; // Fewer initial particles on mobile
+        const intervalTime = isMobile ? 3000 : 1000; // Slower creation on mobile
+
         // Create floating particles
         const createParticle = () => {
+            const container = document.querySelector('.tech-background-container');
+            if (!container) return;
+
             const particle = document.createElement('div');
             particle.className = 'tech-particle';
 
@@ -18,7 +26,7 @@ const TechBackground = () => {
             particle.style.width = size + 'px';
             particle.style.height = size + 'px';
 
-            document.querySelector('.tech-background-container')?.appendChild(particle);
+            container.appendChild(particle);
 
             // Remove particle after animation
             setTimeout(() => {
@@ -27,14 +35,17 @@ const TechBackground = () => {
         };
 
         // Create initial particles
-        for (let i = 0; i < 30; i++) {
+        for (let i = 0; i < particleCount; i++) {
             setTimeout(() => createParticle(), i * 200);
         }
 
         // Create new particles periodically
         const interval = setInterval(() => {
-            createParticle();
-        }, 1000);
+            // Limit total particles to prevent DOM overload
+            if (document.querySelectorAll('.tech-particle').length < (isMobile ? 15 : 50)) {
+                createParticle();
+            }
+        }, intervalTime);
 
         return () => clearInterval(interval);
     }, []);

@@ -116,6 +116,7 @@ const BlogSection = () => {
                                     <img
                                         src={post.image}
                                         alt={post.title}
+                                        loading="lazy"
                                         className="w-full h-full object-cover"
                                         onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1000' }}
                                     />

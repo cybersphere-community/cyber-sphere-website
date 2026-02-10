@@ -7,7 +7,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     <div>
                         <div className="flex items-center mb-5">
-                            <img src="/logo.png" alt="Cyber Sphere Logo" className="h-6 w-auto max-w-[140px]" />
+                            <img src="/logo.png" alt="Cyber Sphere Logo" loading="lazy" width="140" height="24" className="h-6 w-auto max-w-[140px]" />
                         </div>
                         <p className="text-slate-400 text-sm leading-relaxed">
                             Empowering the next generation of cybersecurity experts through community, knowledge, and innovation.

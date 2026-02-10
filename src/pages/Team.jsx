@@ -1,6 +1,13 @@
+import SEO from '../components/SEO';
+
 const Team = () => {
     return (
         <div className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <SEO
+                title="Our Team"
+                description="Meet the dedicated team behind Cyber Sphere Community."
+                keywords="cyber sphere team, core team, volunteers"
+            />
             <h1 className="text-4xl font-bold text-white mb-12 text-center">Meet the Team</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {[1, 2, 3, 4].map((i) => (

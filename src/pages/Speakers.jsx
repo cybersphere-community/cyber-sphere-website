@@ -1,6 +1,13 @@
+import SEO from '../components/SEO';
+
 const Speakers = () => {
     return (
         <div className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <SEO
+                title="Our Speakers"
+                description="Meet the industry experts and researchers speaking at Cyber Sphere events."
+                keywords="cybersecurity speakers, experts, researchers, industry professionals"
+            />
             <h1 className="text-4xl font-bold text-white mb-12 text-center">Our Speakers</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {[1, 2, 3].map((i) => (

@@ -1,4 +1,5 @@
 import { Calendar, MapPin, Clock } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Events = () => {
     const upcomingEvents = [
@@ -31,46 +32,51 @@ const Events = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-gray-900 text-white pt-24 pb-16 cyber-grid">
+        <div className="min-h-screen text-white pt-28 pb-20 cyber-grid">
+            <SEO
+                title="Events & Webinars"
+                description="Explore upcoming and past cybersecurity events, webinars, and workshops hosted by Cyber Sphere."
+                keywords="cybersecurity events, webinars, workshops, pentesting, cloud security"
+            />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Upcoming Events Section */}
                 <section className="mb-20">
-                    <div className="flex items-center mb-8">
-                        <div className="h-8 w-1 bg-gradient-to-b from-cyan-500 to-blue-500 mr-4 rounded-full shadow-[0_0_10px_rgba(0,255,255,0.5)]"></div>
-                        <h1 className="text-3xl font-bold text-white">Upcoming Events</h1>
+                    <div className="flex items-center mb-10">
+                        <div className="h-10 w-1.5 bg-gradient-to-b from-sky-500 to-blue-500 mr-4 rounded-full glow"></div>
+                        <h1 className="text-4xl font-bold text-white">Upcoming Events</h1>
                     </div>
 
                     <div className="grid gap-8">
                         {upcomingEvents.map((event) => (
-                            <div key={event.id} className="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 shadow-xl group">
-                                <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+                            <div key={event.id} className="card p-10 glow-hover">
+                                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
                                     <div className="flex-1">
-                                        <span className="inline-block px-3 py-1 bg-cyan-900/50 text-cyan-300 text-xs font-semibold rounded-full mb-4 border border-cyan-500/30">
+                                        <span className="inline-block px-4 py-1.5 bg-sky-500/10 text-sky-400 text-sm font-semibold rounded-full mb-5 border border-sky-500/20">
                                             {event.type}
                                         </span>
-                                        <h2 className="text-2xl font-bold mb-3 text-white group-hover:text-cyan-400 transition-colors">
+                                        <h2 className="text-3xl font-bold mb-4 text-white">
                                             {event.title}
                                         </h2>
-                                        <p className="text-gray-400 mb-6 max-w-2xl">
+                                        <p className="text-slate-300 mb-6 max-w-2xl leading-relaxed">
                                             {event.description}
                                         </p>
-                                        <div className="flex flex-wrap gap-6 text-sm text-gray-400">
+                                        <div className="flex flex-wrap gap-6 text-sm text-slate-400">
                                             <div className="flex items-center">
-                                                <Calendar className="h-4 w-4 mr-2 text-cyan-500" />
+                                                <Calendar className="h-5 w-5 mr-2 text-sky-500" />
                                                 {event.date}
                                             </div>
                                             <div className="flex items-center">
-                                                <Clock className="h-4 w-4 mr-2 text-cyan-500" />
+                                                <Clock className="h-5 w-5 mr-2 text-sky-500" />
                                                 {event.time}
                                             </div>
                                             <div className="flex items-center">
-                                                <MapPin className="h-4 w-4 mr-2 text-cyan-500" />
+                                                <MapPin className="h-5 w-5 mr-2 text-sky-500" />
                                                 {event.location}
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="mt-8 md:mt-0 flex flex-col sm:flex-row gap-4">
-                                        <button className="btn-animated-border bg-transparent text-white px-8 py-3 rounded-lg font-bold transition-all duration-300">
+                                    <div>
+                                        <button className="btn-primary whitespace-nowrap">
                                             Register Now
                                         </button>
                                     </div>
@@ -82,22 +88,22 @@ const Events = () => {
 
                 {/* Event Legacy Section */}
                 <section>
-                    <div className="flex items-center mb-8">
-                        <div className="h-8 w-1 bg-gradient-to-b from-gray-500 to-gray-700 mr-4 rounded-full"></div>
-                        <h2 className="text-3xl font-bold"><span className="text-gray-300">Event Legacy</span></h2>
+                    <div className="flex items-center mb-10">
+                        <div className="h-10 w-1.5 bg-gradient-to-b from-slate-500 to-slate-700 mr-4 rounded-full"></div>
+                        <h2 className="text-4xl font-bold text-slate-300">Event Legacy</h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {pastEvents.map((event) => (
-                            <div key={event.id} className="bg-gray-800/60 rounded-xl p-6 border border-gray-700 hover:border-gray-600 transition-all hover:scale-[1.02]">
-                                <div className="flex justify-between items-start mb-4">
-                                    <span className="text-xs font-medium text-gray-500 uppercase tracking-widest">{event.type}</span>
-                                    <span className="text-xs text-gray-500">{event.date}</span>
+                            <div key={event.id} className="card p-8 bg-slate-800/60">
+                                <div className="flex justify-between items-start mb-5">
+                                    <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">{event.type}</span>
+                                    <span className="text-xs text-slate-400">{event.date}</span>
                                 </div>
-                                <h3 className="text-xl font-bold mb-2 text-white">
+                                <h3 className="text-2xl font-bold mb-3 text-white">
                                     {event.title}
                                 </h3>
-                                <p className="text-gray-400 text-sm line-clamp-2">
+                                <p className="text-slate-400 text-sm line-clamp-2 leading-relaxed">
                                     {event.description}
                                 </p>
                             </div>

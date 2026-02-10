@@ -1,82 +1,200 @@
 import { Link } from 'react-router-dom';
 import BlogSection from '../components/BlogSection';
+import SecurityQuotes from '../components/SecurityQuotes';
+import { Shield, Users, Calendar, Award, Terminal, Code, Lock, Zap } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Home = () => {
     return (
-        <div className="min-h-screen bg-gray-900 text-white cyber-grid">
-            {/* Hero Section */}
-            <section className="relative overflow-hidden py-20 sm:py-32">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-5"></div>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="text-center">
-                        <div className="flex justify-center mb-8 pulse-animation">
-                            <img
-                                src="/logo.png"
-                                alt="Cyber Sphere Logo"
-                                className="h-32 w-auto sm:h-40 rounded-2xl shadow-[0_0_80px_rgba(0,255,255,0.4)] border-2 border-cyan-500/50"
-                            />
+        <div className="min-h-screen text-white">
+            <SEO
+                title="Home"
+                description="Welcome to Cyber Sphere Community - The ultimate hub for cybersecurity enthusiasts, students, and professionals to learn, collaborate, and grow."
+                keywords="cybersecurity, community, hacking, students, events, ctf, workshops"
+            />
+            {/* Hero Section - Centered Layout */}
+            <section className="relative overflow-hidden py-20 sm:py-32 cyber-grid">
+                {/* Background with blur effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
+
+                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="text-center space-y-8 fade-in">
+                        {/* Logo - Small & Cool */}
+                        <div className="flex justify-center mb-12">
+                            <div className="relative group">
+                                {/* Strong Glow Effect */}
+                                <div className="absolute -inset-4 bg-gradient-to-r from-sky-500/40 via-cyan-500/40 to-blue-500/40 rounded-full blur-2xl opacity-75 group-hover:opacity-100 transition-opacity"></div>
+
+                                {/* Terminal Icon Logo with Rounded Border */}
+                                <img
+                                    src="/terminal-logo.png.png"
+                                    alt="Cyber Sphere Terminal"
+                                    className="relative w-full h-auto max-w-xs transform group-hover:scale-110 transition-all duration-500 drop-shadow-2xl rounded-full border-2 border-sky-500/30"
+                                />
+                            </div>
                         </div>
-                        <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6">
-                            <span className="text-red-600">Cyber</span> <span className="text-white">Sphere</span>
-                            <span className="block text-white mt-2">Community</span>
-                        </h1>
-                        <p className="text-xl sm:text-2xl text-cyan-100/80 mb-8 max-w-3xl mx-auto">
-                            A non-profit initiative to promote cybersecurity awareness and build a network for students, researchers, and industry professionals.
+
+                        {/* Main Title */}
+                        <div>
+                            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-orbitron font-bold mb-6 leading-tight tracking-wider drop-shadow-[0_0_25px_rgba(0,180,255,0.4)] uppercase">
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-red-400 to-red-600 text-shimmer drop-shadow-sm">Cyber</span>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-sky-200 to-slate-100 text-shimmer drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]" style={{ animationDelay: '0.5s' }}> Sphere</span>
+                                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-500 mt-2 tracking-widest text-shadow-glow">Community</span>
+                            </h1>
+                        </div>
+
+                        {/* Description */}
+                        <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto px-4">
+                            A community-driven cybersecurity initiative to promote threat awareness, defensive strategies, and build a network for students, researchers, and industry professionals.
                         </p>
-                        <div className="flex justify-center space-x-4">
-                            <a href="https://lnkd.in/gJQN6f5J" target="_blank" rel="noopener noreferrer" className="btn-animated-border btn-ripple bg-transparent text-white px-8 py-3 rounded-md font-bold transition-all">
-                                <span className="relative z-10">Join Cyber Sphere</span>
+
+                        {/* Key Features */}
+                        <div className="flex flex-wrap justify-center gap-6 pt-8 max-w-3xl mx-auto">
+                            <div className="flex items-center gap-2 px-4 py-2 bg-slate-800/50 border border-sky-500/30 rounded-full">
+                                <Terminal className="h-5 w-5 text-sky-400" />
+                                <span className="text-sm text-slate-200">Hands-on Training</span>
+                            </div>
+                            <div className="flex items-center gap-2 px-4 py-2 bg-slate-800/50 border border-cyan-500/30 rounded-full">
+                                <Shield className="h-5 w-5 text-cyan-400" />
+                                <span className="text-sm text-slate-200">Expert Mentorship</span>
+                            </div>
+                            <div className="flex items-center gap-2 px-4 py-2 bg-slate-800/50 border border-blue-500/30 rounded-full">
+                                <Users className="h-5 w-5 text-blue-400" />
+                                <span className="text-sm text-slate-200">Collaborative Learning</span>
+                            </div>
+                        </div>
+
+                        {/* CTA Button */}
+                        <div className="pt-4">
+                            <a
+                                href="https://lnkd.in/gJQN6f5J"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-3 px-10 py-4 text-lg font-semibold text-white bg-transparent border-2 border-sky-500 rounded-lg hover:bg-sky-500/10 transition-all duration-300 group"
+                            >
+                                Join Cyber Sphere
+                                <Shield className="h-5 w-5 group-hover:rotate-12 transition-transform" />
                             </a>
                         </div>
+
+                        {/* Stats Section */}
+                        <div className="pt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                            {[
+                                { icon: Users, value: '5000+', label: 'Active Members' },
+                                { icon: Calendar, value: '10+', label: 'Events Hosted' },
+                                { icon: Award, value: '10+', label: 'Workshops' },
+                                { icon: Terminal, value: '100+', label: 'CTF Challenges' }
+                            ].map((stat, index) => (
+                                <div key={index} className="p-6 rounded-xl bg-slate-800/40 border border-slate-700/50 hover:border-sky-500/50 transition-all hover:scale-105 group">
+                                    <stat.icon className="h-10 w-10 mx-auto mb-3 text-sky-400 group-hover:scale-110 transition-transform" />
+                                    <div className="text-3xl font-bold text-sky-400 mb-1">{stat.value}</div>
+                                    <div className="text-sm text-slate-400">{stat.label}</div>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Secondary CTA */}
+                        <div className="pt-6">
+                            <Link
+                                to="/events"
+                                className="inline-flex items-center gap-2 text-sky-400 hover:text-sky-300 transition-colors group"
+                            >
+                                <span>Explore Our Events</span>
+                                <Calendar className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                            </Link>
+                        </div>
+
+                        {/* Running Security Quotes */}
+                        <div className="mt-16 fade-in" style={{ animationDelay: '0.6s' }}>
+                            <SecurityQuotes />
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* About Section Preview */}
-            <section className="py-16 bg-transparent">
+            {/* About Section - Split Design */}
+            <section className="py-20 cyber-grid">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                        <div className="bg-gray-800 p-8 rounded-2xl border border-gray-700">
-                            <h2 className="text-3xl font-bold mb-6 text-white">
-                                Who We Are
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        {/* Left - Content */}
+                        <div>
+                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full mb-6">
+                                <Lock className="h-4 w-4 text-cyan-400" />
+                                <span className="text-cyan-400 text-sm font-semibold">About Us</span>
+                            </div>
+                            <h2 className="text-4xl font-bold mb-6 text-white">
+                                Empowering the Next Generation of <span className="gradient-text">Cyber Defenders</span>
                             </h2>
-                            <p className="text-cyan-100/70 mb-4">
-                                Cyber Sphere is dedicated to bridging the gap between academic knowledge and industry practice in the field of cybersecurity. We organize workshops, CTFs, and talks to empower the next generation of defenders.
+                            <p className="text-slate-300 mb-5 leading-relaxed text-lg">
+                                Cyber Sphere is dedicated to bridging the gap between academic knowledge and industry practice in the field of cybersecurity.
                             </p>
-                            <p className="text-cyan-100/70">
-                                Our mission is to create a safe and collaborative environment where anyone can learn, share, and grow.
-                            </p>
+                            <div className="space-y-4">
+                                {[
+                                    { icon: Code, text: 'Hands-on workshops and CTF competitions' },
+                                    { icon: Users, text: 'Collaborative learning environment' },
+                                    { icon: Award, text: 'Industry expert-led sessions' }
+                                ].map((item, index) => (
+                                    <div key={index} className="flex items-start gap-3">
+                                        <div className="bg-sky-500/10 p-2 rounded-lg border border-sky-500/20">
+                                            <item.icon className="h-5 w-5 text-sky-400" />
+                                        </div>
+                                        <p className="text-slate-300 pt-1">{item.text}</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                        <div className="bg-gray-800 h-64 rounded-2xl flex items-center justify-center border border-gray-700">
-                            {/* Placeholder for About Image */}
-                            <span className="text-cyan-400/50 text-lg">Community Image Placeholder</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
-            {/* Upcoming Event Highlight */}
-            <section className="py-16">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-3xl font-bold mb-8 text-center text-white">
-                        Upcoming Event
-                    </h2>
-                    <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-cyan-500/50 transition-all">
-                        <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-                            <div>
-                                <span className="inline-block px-3 py-1 bg-cyan-900/50 text-cyan-300 text-xs font-semibold rounded-full mb-3 border border-cyan-500/30">
-                                    Webinar
-                                </span>
-                                <h3 className="text-2xl font-bold mb-2 text-white glitch-hover">Advanced Penetration Testing Techniques</h3>
-                                <p className="text-cyan-100/70 mb-4">Join us for a deep dive into modern pentesting methodologies with industry experts.</p>
-                                <div className="flex items-center text-sm text-cyan-300/80 space-x-4">
-                                    <span>📅 Oct 25, 2026</span>
-                                    <span>⏰ 18:00 IST</span>
+                        {/* Right - Visual Element */}
+                        <div className="relative">
+                            <div className="card p-8 bg-gradient-to-br from-slate-800/80 to-slate-900/80 border-2 border-sky-500/20">
+                                <div className="aspect-video bg-gradient-to-br from-sky-500/20 to-cyan-500/20 rounded-lg flex items-center justify-center relative overflow-hidden">
+                                    <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgxNCwxNjUsMjMzLDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-50"></div>
+                                    <Shield className="h-32 w-32 text-sky-400/30" />
+                                    <div className="absolute top-4 right-4 bg-green-500 h-3 w-3 rounded-full animate-pulse"></div>
+                                    <div className="absolute bottom-4 left-4 text-sky-400 text-xs font-mono">SECURE</div>
                                 </div>
                             </div>
-                            <div className="mt-6 md:mt-0">
-                                <a href="/events/1" className="inline-block btn-animated-border btn-ripple px-6 py-2 rounded-md font-bold transition-all">
-                                    <span className="relative z-10">Register Now</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Featured Event - Neon Card */}
+            <section className="py-20">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-12">
+                        <h2 className="text-4xl font-bold text-white mb-4">
+                            Upcoming <span className="gradient-text">Event</span>
+                        </h2>
+                        <p className="text-slate-400">Don't miss our next cybersecurity session</p>
+                    </div>
+
+                    <div className="card p-10 bg-gradient-to-br from-slate-800/80 to-slate-900/80 border-2 border-sky-500/30 glow-hover relative overflow-hidden">
+                        {/* Accent Corner */}
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-sky-500/20 to-transparent"></div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center relative z-10">
+                            <div className="md:col-span-2">
+                                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-sky-500/10 text-sky-400 text-sm font-semibold rounded-full mb-4 border border-sky-500/20">
+                                    <div className="w-2 h-2 bg-sky-400 rounded-full animate-pulse"></div>
+                                    Webinar
+                                </div>
+                                <h3 className="text-3xl font-bold mb-3 text-white">Advanced Penetration Testing Techniques</h3>
+                                <p className="text-slate-300 mb-6 leading-relaxed">Join us for a deep dive into modern pentesting methodologies with industry experts.</p>
+                                <div className="flex flex-wrap items-center gap-6 text-sm text-slate-400">
+                                    <div className="flex items-center gap-2">
+                                        <Calendar className="h-5 w-5 text-sky-500" />
+                                        <span>Oct 25, 2026</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <div className="h-5 w-5 text-sky-500">⏰</div>
+                                        <span>18:00 IST</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex justify-center md:justify-end">
+                                <a href="/events/1" className="btn-primary w-full md:w-auto text-center">
+                                    Register Now
                                 </a>
                             </div>
                         </div>

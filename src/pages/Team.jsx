@@ -55,7 +55,7 @@ const teamMembers = [
 
 const Team = () => {
     return (
-        <div className="min-h-screen pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="min-h-screen pt-20 pb-8 sm:pt-24 sm:pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
             <SEO
                 title="Our Team"
                 description="Meet the dedicated team behind Cyber Sphere Community."
@@ -63,7 +63,7 @@ const Team = () => {
             />
 
             <div className="text-center mb-16">
-                <h1 className="text-4xl md:text-5xl font-bold font-orbitron mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-orbitron mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">
                     Meet the Team
                 </h1>
                 <p className="text-slate-400 max-w-2xl mx-auto text-lg">
@@ -75,11 +75,11 @@ const Team = () => {
                 {teamMembers.map((member, index) => (
                     <div
                         key={index}
-                        className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6 hover:border-cyan-500/30 transition-all duration-300 hover:bg-slate-800/60 flex flex-col sm:flex-row items-center sm:items-start gap-6 group"
+                        className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-xl p-4 sm:p-6 hover:border-cyan-500/30 transition-all duration-300 hover:bg-slate-800/60 flex flex-col sm:flex-row items-center sm:items-start gap-6 group"
                     >
                         {/* Circular Image */}
                         <div className="flex-shrink-0 relative">
-                            <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-slate-600 group-hover:border-cyan-500 transition-colors duration-300 ring-4 ring-slate-800/50 shadow-lg">
+                            <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-slate-600 group-hover:border-cyan-500 transition-colors duration-300 ring-4 ring-slate-800/50 shadow-lg">
                                 <img
                                     src={member.image}
                                     alt={member.name}

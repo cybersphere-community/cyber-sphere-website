@@ -75,15 +75,15 @@ const Articles = () => {
     );
 
     return (
-        <div className="min-h-screen text-white pt-28 pb-20 cyber-grid">
+        <div className="min-h-screen text-white pt-20 pb-12 sm:pt-28 sm:pb-20 cyber-grid">
             <SEO
                 title="Articles"
                 description="Read the latest articles and tutorials on cybersecurity, cloud defense, and ethical hacking."
                 keywords="cybersecurity articles, tutorials, hacking, cloud security, ethical hacking"
             />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-14">
-                    <h1 className="text-5xl font-extrabold mb-5 text-white">
+                <div className="text-center mb-8 sm:mb-14">
+                    <h1 className="text-3xl sm:text-5xl font-extrabold mb-5 text-white">
                         Cyber Insights
                     </h1>
                     <p className="text-slate-300 max-w-2xl mx-auto text-lg leading-relaxed">
@@ -126,7 +126,7 @@ const Articles = () => {
                                             {post.source}
                                         </div>
                                     </div>
-                                    <div className="p-6">
+                                    <div className="p-4 sm:p-6">
                                         <div className="flex items-center text-slate-400 text-sm mb-3">
                                             <Calendar className="h-4 w-4 mr-1.5 text-sky-500" />
                                             {post.date.toLocaleDateString()}

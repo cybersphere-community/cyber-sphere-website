@@ -3,7 +3,7 @@ import SEO from '../components/SEO';
 
 const Contact = () => {
     return (
-        <div className="min-h-screen pt-28 pb-20 px-4 sm:px-6 lg:px-8 cyber-grid">
+        <div className="min-h-screen pt-20 pb-12 sm:pt-28 sm:pb-20 px-4 sm:px-6 lg:px-8 cyber-grid">
             <SEO
                 title="Contact Us"
                 description="Get in touch with Cyber Sphere Community. We'd love to hear from you."
@@ -11,7 +11,7 @@ const Contact = () => {
             />
             <div className="max-w-2xl mx-auto">
                 <div className="text-center mb-10">
-                    <h1 className="text-5xl font-bold text-white mb-4">Get in Touch</h1>
+                    <h1 className="text-3xl sm:text-5xl font-bold text-white mb-4">Get in Touch</h1>
                     <p className="text-slate-300 text-lg mb-6">Have a question or want to collaborate? We'd love to hear from you.</p>
 
                     {/* Official Email Display */}
@@ -24,7 +24,7 @@ const Contact = () => {
                         </a>
                     </div>
                 </div>
-                <div className="card p-10">
+                <div className="card p-6 sm:p-10">
                     <form className="space-y-6">
                         <div>
                             <label htmlFor="name" className="block text-sm font-semibold text-slate-200 mb-2">Name</label>

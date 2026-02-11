@@ -22,15 +22,23 @@ const Home = () => {
                         {/* Logo - Small & Cool */}
                         <div className="flex justify-center mb-8 sm:mb-12">
                             <div className="relative group">
-                                {/* Strong Glow Effect */}
-                                <div className="absolute -inset-4 bg-gradient-to-r from-sky-500/40 via-cyan-500/40 to-blue-500/40 rounded-full blur-2xl opacity-75 group-hover:opacity-100 transition-opacity"></div>
+                                {/* Animated Glow Grid */}
+                                <div className="absolute -inset-8 bg-gradient-to-r from-sky-500/20 via-cyan-500/20 to-blue-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
-                                {/* Terminal Icon Logo with Rounded Border */}
+                                {/* Rotating Rings */}
+                                <div className="absolute -inset-4 rounded-full border border-sky-500/30 border-t-transparent animate-spin-slow"></div>
+                                <div className="absolute -inset-2 rounded-full border border-cyan-500/20 border-b-transparent animate-reverse-spin"></div>
+
+                                {/* Logo Image */}
                                 <img
-                                    src="/terminal-logo.png.png"
+                                    src="/terminal-logo.png.png" // Preserving original filename
                                     alt="Cyber Sphere Terminal"
-                                    className="relative w-full h-auto max-w-xs transform group-hover:scale-110 transition-all duration-500 drop-shadow-2xl rounded-full border-2 border-sky-500/30"
+                                    className="relative w-32 h-32 sm:w-40 sm:h-40 object-contain transform group-hover:scale-105 transition-all duration-500 drop-shadow-[0_0_15px_rgba(14,165,233,0.3)]"
                                 />
+
+                                {/* Tech Decorators */}
+                                <div className="absolute bottom-0 right-0 w-3 h-3 border-r-[3px] border-b-[3px] border-sky-400 rounded-br-md"></div>
+                                <div className="absolute top-0 left-0 w-3 h-3 border-l-[3px] border-t-[3px] border-sky-400 rounded-tl-md"></div>
                             </div>
                         </div>
 

@@ -13,14 +13,14 @@ const Home = () => {
                 keywords="cybersecurity, community, hacking, students, events, ctf, workshops"
             />
             {/* Hero Section - Centered Layout */}
-            <section className="relative overflow-hidden py-20 sm:py-32 cyber-grid">
+            <section className="relative overflow-hidden py-12 sm:py-20 lg:py-32 cyber-grid">
                 {/* Background with blur effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
 
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="text-center space-y-8 fade-in">
                         {/* Logo - Small & Cool */}
-                        <div className="flex justify-center mb-12">
+                        <div className="flex justify-center mb-8 sm:mb-12">
                             <div className="relative group">
                                 {/* Strong Glow Effect */}
                                 <div className="absolute -inset-4 bg-gradient-to-r from-sky-500/40 via-cyan-500/40 to-blue-500/40 rounded-full blur-2xl opacity-75 group-hover:opacity-100 transition-opacity"></div>
@@ -36,7 +36,7 @@ const Home = () => {
 
                         {/* Main Title */}
                         <div>
-                            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-orbitron font-bold mb-6 leading-tight tracking-wider drop-shadow-[0_0_25px_rgba(0,180,255,0.4)] uppercase">
+                            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-orbitron font-bold mb-6 leading-tight tracking-wider drop-shadow-[0_0_25px_rgba(0,180,255,0.4)] uppercase">
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-red-400 to-red-600 text-shimmer drop-shadow-sm">Cyber</span>
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-100 via-sky-200 to-slate-100 text-shimmer drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]" style={{ animationDelay: '0.5s' }}> Sphere</span>
                                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-500 mt-2 tracking-widest text-shadow-glow">Community</span>
@@ -70,7 +70,7 @@ const Home = () => {
                                 href="https://lnkd.in/gJQN6f5J"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-3 px-10 py-4 text-lg font-semibold text-white bg-transparent border-2 border-sky-500 rounded-lg hover:bg-sky-500/10 transition-all duration-300 group"
+                                className="inline-flex items-center gap-3 px-6 py-3 sm:px-10 sm:py-4 text-base sm:text-lg font-semibold text-white bg-transparent border-2 border-sky-500 rounded-lg hover:bg-sky-500/10 transition-all duration-300 group"
                             >
                                 Join Cyber Sphere
                                 <Shield className="h-5 w-5 group-hover:rotate-12 transition-transform" />
@@ -78,16 +78,16 @@ const Home = () => {
                         </div>
 
                         {/* Stats Section */}
-                        <div className="pt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                        <div className="pt-8 sm:pt-12 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto">
                             {[
                                 { icon: Users, value: '5000+', label: 'Active Members' },
                                 { icon: Calendar, value: '10+', label: 'Events Hosted' },
                                 { icon: Award, value: '10+', label: 'Workshops' },
                                 { icon: Terminal, value: '100+', label: 'CTF Challenges' }
                             ].map((stat, index) => (
-                                <div key={index} className="p-6 rounded-xl bg-slate-800/40 border border-slate-700/50 hover:border-sky-500/50 transition-all hover:scale-105 group">
-                                    <stat.icon className="h-10 w-10 mx-auto mb-3 text-sky-400 group-hover:scale-110 transition-transform" />
-                                    <div className="text-3xl font-bold text-sky-400 mb-1">{stat.value}</div>
+                                <div key={index} className="p-4 sm:p-6 rounded-xl bg-slate-800/40 border border-slate-700/50 hover:border-sky-500/50 transition-all hover:scale-105 group">
+                                    <stat.icon className="h-8 w-8 sm:h-10 sm:w-10 mx-auto mb-2 sm:mb-3 text-sky-400 group-hover:scale-110 transition-transform" />
+                                    <div className="text-xl sm:text-3xl font-bold text-sky-400 mb-1">{stat.value}</div>
                                     <div className="text-sm text-slate-400">{stat.label}</div>
                                 </div>
                             ))}
@@ -113,7 +113,7 @@ const Home = () => {
             </section>
 
             {/* About Section - Split Design */}
-            <section className="py-20 cyber-grid">
+            <section className="py-12 sm:py-20 cyber-grid">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         {/* Left - Content */}
@@ -122,7 +122,7 @@ const Home = () => {
                                 <Lock className="h-4 w-4 text-cyan-400" />
                                 <span className="text-cyan-400 text-sm font-semibold">About Us</span>
                             </div>
-                            <h2 className="text-4xl font-bold mb-6 text-white">
+                            <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-white">
                                 Empowering the Next Generation of <span className="gradient-text">Cyber Defenders</span>
                             </h2>
                             <p className="text-slate-300 mb-5 leading-relaxed text-lg">
@@ -160,16 +160,16 @@ const Home = () => {
             </section>
 
             {/* Featured Event - Neon Card */}
-            <section className="py-20">
+            <section className="py-12 sm:py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12">
-                        <h2 className="text-4xl font-bold text-white mb-4">
+                        <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
                             Upcoming <span className="gradient-text">Event</span>
                         </h2>
                         <p className="text-slate-400">Don't miss our next cybersecurity session</p>
                     </div>
 
-                    <div className="card p-10 bg-gradient-to-br from-slate-800/80 to-slate-900/80 border-2 border-sky-500/30 glow-hover relative overflow-hidden">
+                    <div className="card p-6 sm:p-10 bg-gradient-to-br from-slate-800/80 to-slate-900/80 border-2 border-sky-500/30 glow-hover relative overflow-hidden">
                         {/* Accent Corner */}
                         <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-sky-500/20 to-transparent"></div>
 
@@ -179,7 +179,7 @@ const Home = () => {
                                     <div className="w-2 h-2 bg-sky-400 rounded-full animate-pulse"></div>
                                     Webinar
                                 </div>
-                                <h3 className="text-3xl font-bold mb-3 text-white">Advanced Penetration Testing Techniques</h3>
+                                <h3 className="text-xl sm:text-3xl font-bold mb-3 text-white">Advanced Penetration Testing Techniques</h3>
                                 <p className="text-slate-300 mb-6 leading-relaxed">Join us for a deep dive into modern pentesting methodologies with industry experts.</p>
                                 <div className="flex flex-wrap items-center gap-6 text-sm text-slate-400">
                                     <div className="flex items-center gap-2">

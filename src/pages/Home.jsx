@@ -8,7 +8,7 @@ import { upcomingEvents } from '../data/events';
 const Home = () => {
     const featuredEvent = upcomingEvents[0];
     return (
-        <div className="min-h-screen text-slate-300 overflow-hidden">
+        <div className="min-h-screen bg-brand-light text-brand-secondary overflow-hidden font-sans">
             <SEO
                 title="Home"
                 description="Welcome to Cyber Sphere Community - The ultimate hub for cybersecurity enthusiasts, students, and professionals to learn, collaborate, and grow."
@@ -87,59 +87,53 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* HUD Stats Bar */}
-            <div className="border-y border-slate-800 bg-black/50 backdrop-blur-md">
+            {/* Stats Bar - Minimalist */}
+            <div className="border-y border-slate-200 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-800">
+                    <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-100">
                         {[
-                            { label: 'MEETUPS', value: '100+', color: 'text-red-500' },
-                            { label: 'CTFs PLAYED', value: '500+', color: 'text-white' },
-                            { label: 'CONTRIBUTORS', value: '5K+', color: 'text-red-500' },
-                            { label: 'OPEN SOURCE', value: '100%', color: 'text-white' }
+                            { label: 'MEETUPS', value: '100+' },
+                            { label: 'CTFs PLAYED', value: '500+' },
+                            { label: 'CONTRIBUTORS', value: '5K+' },
+                            { label: 'OPEN SOURCE', value: '100%' }
                         ].map((stat, i) => (
-                            <div key={i} className="py-6 text-center group cursor-default">
-                                <div className={`text-2xl sm:text-3xl font-orbitron font-bold ${stat.color} mb-1 group-hover:scale-110 transition-transform`}>
+                            <div key={i} className="py-8 text-center group cursor-default">
+                                <div className="text-3xl font-bold text-brand-primary mb-1 group-hover:scale-110 transition-transform">
                                     {stat.value}
                                 </div>
-                                <div className="text-xs text-slate-500 font-mono tracking-widest">{stat.label}</div>
+                                <div className="text-xs text-slate-400 font-bold tracking-widest">{stat.label}</div>
                             </div>
                         ))}
                     </div>
                 </div>
             </div>
 
-            {/* About Section - Holographic Cards */}
-            <section className="py-20 lg:py-32 relative">
-                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 pointer-events-none"></div>
+            {/* Mission Section - Clean Cards */}
+            <section className="py-24 bg-brand-light relative">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl sm:text-4xl font-bold font-orbitron text-white mb-4">
-                            <span className="text-red-600">///</span> OUR MISSION
+                    <div className="text-center mb-20">
+                        <h2 className="text-3xl sm:text-4xl font-bold text-brand-primary mb-4">
+                            Our Mission
                         </h2>
-                        <p className="text-slate-400 max-w-2xl mx-auto">
-                            We are a community of ethical hackers working together to make the internet safer through open knowledge sharing.
+                        <p className="text-slate-500 max-w-2xl mx-auto">
+                            Empowering the next generation of defenders through open collaboration.
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
-                            { icon: Terminal, title: 'Hands-on Learning', desc: 'Practical workshops and live demos. Learn by protecting real systems.', color: 'border-red-600' },
-                            { icon: Shield, title: 'Community Defense', desc: 'Collaborate on staying safe online. Share strategies to stop the latest cyber threats.', color: 'border-white' },
-                            { icon: Globe, title: 'Global Network', desc: 'Connect with security experts, researchers, and learners from around the world.', color: 'border-red-600' }
+                            { icon: Terminal, title: 'Hands-on Learning', desc: 'Practical workshops and live demos. Learn by protecting real systems.' },
+                            { icon: Shield, title: 'Community Defense', desc: 'Collaborate on staying safe online. Share strategies to stop the latest cyber threats.' },
+                            { icon: Globe, title: 'Global Network', desc: 'Connect with security experts, researchers, and learners from around the world.' }
                         ].map((item, i) => (
-                            <div key={i} className={`glass-panel p-8 rounded-xl border-t-2 ${item.color} hover:bg-white/5 transition-colors group relative overflow-hidden`}>
-                                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                                    <item.icon className="w-24 h-24" />
+                            <div key={i} className="group p-8 bg-white rounded-2xl border border-slate-100 shadow-soft hover:shadow-card transition-all duration-300 hover:-translate-y-1">
+                                <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-accent transition-colors duration-300">
+                                    <item.icon className="w-7 h-7 text-brand-accent group-hover:text-white transition-colors duration-300" />
                                 </div>
-                                <div className="relative z-10">
-                                    <div className="bg-slate-800/50 w-12 h-12 rounded-lg flex items-center justify-center mb-6 border border-slate-700 group-hover:border-slate-500 transition-colors">
-                                        <item.icon className="w-6 h-6 text-white" />
-                                    </div>
-                                    <h3 className="text-xl font-bold font-orbitron text-white mb-3">{item.title}</h3>
-                                    <p className="text-slate-400 leading-relaxed text-sm">
-                                        {item.desc}
-                                    </p>
-                                </div>
+                                <h3 className="text-xl font-bold text-brand-primary mb-3">{item.title}</h3>
+                                <p className="text-slate-500 leading-relaxed text-sm">
+                                    {item.desc}
+                                </p>
                             </div>
                         ))}
                     </div>
@@ -147,61 +141,56 @@ const Home = () => {
             </section>
 
             {/* Security Quotes */}
-            <div className="py-12 relative z-10">
+            <div className="py-12 bg-white">
                 <SecurityQuotes />
             </div>
 
-            {/* Featured Event - Neon Frame */}
-            <section className="py-20 relative overflow-hidden">
+            {/* Featured Event - Clean Design */}
+            <section className="py-24 bg-brand-light">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="relative rounded-2xl border border-neon-cyan/30 bg-black/40 backdrop-blur-xl overflow-hidden group">
-                        {/* Scanning Line Animation */}
-                        <div className="absolute top-0 left-0 w-full h-[2px] bg-neon-cyan shadow-[0_0_15px_#00f3ff] animate-scan opacity-50"></div>
-
-                        <div className="grid grid-cols-1 lg:grid-cols-2 relative z-10">
-                            <div className="p-8 sm:p-12 flex flex-col justify-center">
-
-                                <div className="inline-flex items-center gap-2 mb-6">
-                                    <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
-                                    <span className="text-red-600 font-mono text-sm tracking-widest">NEXT GATHERING</span>
-                                </div>
-                                <h3 className="text-3xl sm:text-4xl font-bold font-orbitron text-white mb-6">
-                                    {featuredEvent ? featuredEvent.title : "Upcoming Event"}
-                                </h3>
-                                <p className="text-slate-400 mb-8 max-w-md">
-                                    {featuredEvent ? featuredEvent.description : "Stay tuned for updates."}
-                                </p>
-
-                                <div className="grid grid-cols-2 gap-6 mb-8">
-                                    <div>
-                                        <span className="block text-slate-500 text-xs font-mono mb-1">DATE</span>
-                                        <span className="text-white font-mono">{featuredEvent ? featuredEvent.date : "TBA"}</span>
-                                    </div>
-                                    <div>
-                                        <span className="block text-slate-500 text-xs font-mono mb-1">TIME</span>
-                                        <span className="text-white font-mono">{featuredEvent ? featuredEvent.time : "TBA"}</span>
-                                    </div>
-                                </div>
-
-                                <a href="/events" className="inline-flex items-center justify-center px-6 py-3 bg-red-600/20 border border-red-600 text-red-500 hover:bg-red-600 hover:text-white transition-all font-mono text-sm uppercase max-w-xs">
-                                </a>
+                    <div className="bg-white rounded-3xl shadow-card border border-slate-100 overflow-hidden flex flex-col lg:flex-row">
+                        <div className="p-10 sm:p-14 lg:w-1/2 flex flex-col justify-center">
+                            <div className="inline-flex items-center gap-2 mb-8">
+                                <span className="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
+                                <span className="text-brand-accent font-bold text-sm tracking-widest uppercase">Next Gathering</span>
                             </div>
 
-                            <div className="relative min-h-[300px] lg:min-h-full bg-slate-900/50">
-                                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-40 mix-blend-overlay"></div>
-                                <div className="absolute inset-0 bg-gradient-to-l from-black/80 to-transparent"></div>
-                                {/* Tech overlay lines */}
-                                <div className="absolute bottom-0 right-0 p-8">
-                                    <Shield className="w-24 h-24 text-neon-cyan/20" />
+                            <h3 className="text-3xl sm:text-4xl font-bold text-brand-primary mb-6 leading-tight">
+                                {featuredEvent ? featuredEvent.title : "Upcoming Event"}
+                            </h3>
+                            <p className="text-slate-500 mb-10 text-lg">
+                                {featuredEvent ? featuredEvent.description : "Stay tuned for updates."}
+                            </p>
+
+                            <div className="grid grid-cols-2 gap-8 mb-10 border-t border-slate-100 pt-8">
+                                <div>
+                                    <span className="block text-slate-400 text-xs font-bold tracking-wider mb-2">DATE</span>
+                                    <span className="text-brand-primary font-semibold text-lg">{featuredEvent ? featuredEvent.date : "TBA"}</span>
+                                </div>
+                                <div>
+                                    <span className="block text-slate-400 text-xs font-bold tracking-wider mb-2">TIME</span>
+                                    <span className="text-brand-primary font-semibold text-lg">{featuredEvent ? featuredEvent.time : "TBA"}</span>
                                 </div>
                             </div>
+
+                            <Link to="/events" className="inline-flex items-center text-brand-accent font-bold hover:gap-4 transition-all gap-2 group">
+                                View Full Event Details <ArrowRightWrapper className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </Link>
+                        </div>
+
+                        <div className="lg:w-1/2 bg-slate-100 relative min-h-[300px]">
+                            <img
+                                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000"
+                                alt="Event"
+                                className="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                            />
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Blog Section */}
-            <div className="relative z-10">
+            <div className="bg-white">
                 <BlogSection />
             </div>
 

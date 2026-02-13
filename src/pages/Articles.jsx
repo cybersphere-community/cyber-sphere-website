@@ -86,34 +86,34 @@ const Articles = () => {
     );
 
     return (
-        <div className="min-h-screen text-white pt-20 pb-12 sm:pt-28 sm:pb-20 cyber-grid">
+        <div className="min-h-screen bg-slate-50 text-slate-900 pt-24 pb-12 sm:pt-32 sm:pb-20 font-sans">
             <SEO
                 title="Articles"
                 description="Read the latest articles and tutorials on cybersecurity, cloud defense, and ethical hacking."
                 keywords="cybersecurity articles, tutorials, hacking, cloud security, ethical hacking"
             />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-8 sm:mb-14">
-                    <h1 className="text-3xl sm:text-5xl font-extrabold mb-5 text-white">
+                <div className="text-center mb-16">
+                    <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-brand-primary tracking-tight">
                         Cyber Insights
                     </h1>
-                    <p className="text-slate-300 max-w-2xl mx-auto text-lg leading-relaxed mb-6">
+                    <p className="text-slate-500 max-w-2xl mx-auto text-lg leading-relaxed mb-8">
                         Deep dives into cybersecurity, cloud defense, and threat evasion.
                         Aggregation of articles from Dev.to and Medium.
                     </p>
-                    <a href="https://www.linkedin.com/in/harsh-kanojia-300189178/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0077b5] hover:bg-[#006097] text-white rounded-lg transition-colors font-medium">
+                    <a href="https://www.linkedin.com/in/harsh-kanojia-300189178/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-[#0077b5] hover:bg-[#006097] text-white rounded-xl shadow-md hover:shadow-lg transition-all font-bold">
                         <ExternalLink className="h-4 w-4" />
                         Connect on LinkedIn
                     </a>
                 </div>
 
                 {/* Search Bar */}
-                <div className="max-w-xl mx-auto mb-14 relative">
-                    <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-sky-500" />
+                <div className="max-w-xl mx-auto mb-16 relative">
+                    <Search className="absolute left-5 top-1/2 transform -translate-y-1/2 h-5 w-5 text-slate-400" />
                     <input
                         type="text"
                         placeholder="Search articles..."
-                        className="w-full bg-slate-800 border-2 border-slate-700 rounded-xl py-3.5 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 text-white placeholder-slate-400 transition-all"
+                        className="w-full bg-white border border-slate-200 rounded-2xl py-4 pl-14 pr-6 focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent text-slate-900 placeholder-slate-400 shadow-sm transition-all"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
@@ -122,42 +122,42 @@ const Articles = () => {
                 {loading ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[1, 2, 3, 4, 5, 6].map((i) => (
-                            <div key={i} className="skeleton rounded-xl h-96"></div>
+                            <div key={i} className="animate-pulse bg-slate-200 rounded-2xl h-96"></div>
                         ))}
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {filteredBlogs.map((post) => (
-                            <article key={post.id} className="card overflow-hidden group">
-                                <a href={post.url} target="_blank" rel="noopener noreferrer" className="block">
+                            <article key={post.id} className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-card hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
+                                <a href={post.url} target="_blank" rel="noopener noreferrer" className="flex flex-col h-full">
                                     <div className="relative h-52 overflow-hidden">
                                         <img
                                             src={post.image}
                                             alt={post.title}
                                             loading="lazy"
-                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                         />
-                                        <div className="absolute top-4 right-4 bg-slate-900/90 backdrop-blur-sm text-sky-400 text-xs px-3 py-1.5 rounded-lg border border-sky-500/20 font-medium">
+                                        <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-brand-primary text-xs font-bold px-3 py-1.5 rounded-lg border border-slate-100 shadow-sm">
                                             {post.source}
                                         </div>
                                     </div>
-                                    <div className="p-4 sm:p-6">
-                                        <div className="flex items-center text-slate-400 text-sm mb-3">
-                                            <Calendar className="h-4 w-4 mr-1.5 text-sky-500" />
+                                    <div className="p-6 flex flex-col flex-grow">
+                                        <div className="flex items-center text-slate-500 text-sm font-medium mb-3 gap-2">
+                                            <Calendar className="h-4 w-4 text-brand-accent" />
                                             {post.date.toLocaleDateString()}
                                         </div>
-                                        <h3 className="text-xl font-bold text-white mb-3 line-clamp-2 group-hover:text-sky-400 transition-colors">
+                                        <h3 className="text-xl font-bold text-brand-primary mb-3 line-clamp-2 group-hover:text-brand-accent transition-colors">
                                             {post.title}
                                         </h3>
-                                        <p className="text-slate-400 text-sm mb-5 line-clamp-3 leading-relaxed">
+                                        <p className="text-slate-500 text-sm mb-6 line-clamp-3 leading-relaxed flex-grow">
                                             {post.description}
                                         </p>
-                                        <div className="flex items-center justify-between pt-4 border-t border-slate-700">
-                                            <span className="text-xs text-slate-300 flex items-center gap-1.5">
+                                        <div className="flex items-center justify-between pt-5 border-t border-slate-100 mt-auto">
+                                            <span className="text-xs text-slate-500 font-bold flex items-center gap-2">
                                                 <User className="h-3.5 w-3.5" /> {post.author}
                                             </span>
-                                            <span className="text-sky-400 text-sm font-semibold flex items-center gap-1">
-                                                Read More <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+                                            <span className="text-brand-accent text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                                Read More <ArrowRight className="h-4 w-4" />
                                             </span>
                                         </div>
                                     </div>

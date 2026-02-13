@@ -1,15 +1,25 @@
-import React from 'react';
-import { Calendar, MapPin, Clock } from 'lucide-react';
+import React, { useEffect } from 'react';
+import { Calendar, MapPin, Clock, ArrowLeft, ArrowRight, Linkedin } from 'lucide-react';
 import SEO from '../components/SEO';
-
 import { upcomingEvents, pastEvents } from '../data/events';
 
 const Events = () => {
-
     const [selectedEvent, setSelectedEvent] = React.useState(null);
 
+    // Lock body scroll when modal is open
+    useEffect(() => {
+        if (selectedEvent) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [selectedEvent]);
+
     return (
-        <div className="min-h-screen text-white pt-20 pb-12 sm:pt-28 sm:pb-20 cyber-grid relative">
+        <div className="min-h-screen bg-slate-50 text-slate-900 pt-24 pb-12 sm:pt-32 sm:pb-20 font-sans">
             <SEO
                 title="Events & Webinars"
                 description="Explore upcoming and past cybersecurity events, webinars, and workshops hosted by Cyber Sphere."
@@ -17,45 +27,45 @@ const Events = () => {
             />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Upcoming Events Section */}
-                <section className="mb-12 sm:mb-20">
-                    <div className="flex items-center mb-10">
-                        <div className="h-10 w-1.5 bg-gradient-to-b from-sky-500 to-blue-500 mr-4 rounded-full glow"></div>
-                        <h1 className="text-2xl sm:text-4xl font-bold text-white">Upcoming Events</h1>
+                <section className="mb-20">
+                    <div className="flex items-center mb-10 gap-4">
+                        <div className="h-10 w-1.5 bg-brand-accent rounded-full"></div>
+                        <h1 className="text-3xl sm:text-5xl font-bold text-brand-primary tracking-tight">Upcoming Events</h1>
                     </div>
 
                     <div className="grid gap-8">
                         {upcomingEvents.map((event) => (
-                            <div key={event.id} className="card p-6 sm:p-10 glow-hover">
+                            <div key={event.id} className="group bg-white rounded-2xl p-8 shadow-sm border border-slate-200 hover:shadow-card hover:-translate-y-1 transition-all duration-300">
                                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
                                     <div className="flex-1">
-                                        <span className="inline-block px-4 py-1.5 bg-sky-500/10 text-sky-400 text-sm font-semibold rounded-full mb-5 border border-sky-500/20">
+                                        <span className="inline-block px-4 py-1.5 bg-blue-50 text-brand-accent text-sm font-bold rounded-full mb-5 border border-blue-100">
                                             {event.type}
                                         </span>
-                                        <h2 className="text-xl sm:text-3xl font-bold mb-4 text-white">
+                                        <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-brand-primary group-hover:text-brand-accent transition-colors">
                                             {event.title}
                                         </h2>
-                                        <p className="text-slate-300 mb-6 max-w-2xl leading-relaxed">
+                                        <p className="text-slate-500 mb-6 max-w-2xl leading-relaxed text-lg">
                                             {event.description}
                                         </p>
-                                        <div className="flex flex-wrap gap-6 text-sm text-slate-400">
-                                            <div className="flex items-center">
-                                                <Calendar className="h-5 w-5 mr-2 text-sky-500" />
+                                        <div className="flex flex-wrap gap-6 text-sm font-medium text-slate-500">
+                                            <div className="flex items-center gap-2">
+                                                <Calendar className="h-5 w-5 text-brand-accent" />
                                                 {event.date}
                                             </div>
-                                            <div className="flex items-center">
-                                                <Clock className="h-5 w-5 mr-2 text-sky-500" />
+                                            <div className="flex items-center gap-2">
+                                                <Clock className="h-5 w-5 text-brand-accent" />
                                                 {event.time}
                                             </div>
-                                            <div className="flex items-center">
-                                                <MapPin className="h-5 w-5 mr-2 text-sky-500" />
+                                            <div className="flex items-center gap-2">
+                                                <MapPin className="h-5 w-5 text-brand-accent" />
                                                 {event.location}
                                             </div>
                                         </div>
                                     </div>
                                     <div>
-                                        <button className="btn-primary whitespace-nowrap">
+                                        <a href="https://forms.gle/xsLyYgHzMiYsp8zx6" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-4 bg-brand-primary text-white font-bold rounded-xl shadow-lg hover:bg-brand-accent hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
                                             Register Now
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -65,42 +75,45 @@ const Events = () => {
 
                 {/* Event Legacy Section */}
                 <section>
-                    <div className="flex items-center mb-10">
-                        <div className="h-10 w-1.5 bg-gradient-to-b from-slate-500 to-slate-700 mr-4 rounded-full"></div>
-                        <h2 className="text-2xl sm:text-4xl font-bold text-slate-300">Event Legacy</h2>
+                    <div className="flex items-center mb-10 gap-4">
+                        <div className="h-10 w-1.5 bg-slate-300 rounded-full"></div>
+                        <h2 className="text-3xl sm:text-4xl font-bold text-slate-400">Event Legacy</h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {pastEvents.map((event) => (
-                            <div key={event.id} className="card p-6 sm:p-8 bg-slate-800/60 flex flex-col h-full">
-                                <div className="flex justify-between items-start mb-5">
-                                    <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">{event.type}</span>
-                                    <span className="text-xs text-slate-400">{event.date}</span>
+                            <div key={event.id} className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
+                                <div className="flex justify-between items-start mb-6">
+                                    <span className="text-xs font-bold text-brand-accent uppercase tracking-wider bg-blue-50 px-3 py-1 rounded-full">{event.type}</span>
+                                    <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">{event.date}</span>
                                 </div>
-                                <h3 className="text-2xl font-bold mb-3 text-white">
+                                <h3 className="text-2xl font-bold mb-3 text-brand-primary leading-tight">
                                     {event.title}
                                 </h3>
-                                <p className="text-slate-400 text-sm mb-4 leading-relaxed flex-grow">
+                                <p className="text-slate-500 text-sm mb-6 leading-relaxed flex-grow">
                                     {event.description}
                                 </p>
 
-                                <div className="pt-4 border-t border-slate-700/50 mt-auto">
-                                    {(event.speaker || event.organizer) && (
-                                        <div className="flex flex-wrap gap-4 text-xs text-slate-500 font-mono mb-4">
-                                            {event.speaker && (
-                                                <div>
-                                                    SPEAKER: <span className="text-neon-cyan ml-1">{event.speaker}</span>
-                                                </div>
-                                            )}
-                                        </div>
-                                    )}
+                                <div className="pt-6 border-t border-slate-100 mt-auto">
+                                    <div className="flex flex-wrap gap-y-2 gap-x-6 text-xs text-slate-500 font-bold uppercase tracking-wider mb-6">
+                                        {event.speaker && (
+                                            <div>
+                                                SPEAKER: <span className="text-brand-primary ml-1">{event.speaker}</span>
+                                            </div>
+                                        )}
+                                        {event.organizer && (
+                                            <div>
+                                                ORGANIZER: <span className="text-brand-primary ml-1">{event.organizer}</span>
+                                            </div>
+                                        )}
+                                    </div>
 
                                     {event.blogContent && (
                                         <button
                                             onClick={() => setSelectedEvent(event)}
-                                            className="w-full py-2 bg-slate-700/50 hover:bg-slate-700 text-white rounded transition-colors text-sm font-medium flex items-center justify-center gap-2 group"
+                                            className="w-full py-3 bg-slate-50 hover:bg-slate-100 text-brand-primary rounded-xl transition-colors text-sm font-bold flex items-center justify-center gap-2 group border border-slate-200"
                                         >
-                                            Read Recap <span className="text-neon-cyan group-hover:translate-x-1 transition-transform">→</span>
+                                            Read Recap <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-brand-accent" />
                                         </button>
                                     )}
                                 </div>
@@ -110,50 +123,81 @@ const Events = () => {
                 </section>
             </div>
 
-            {/* Event Modal */}
+            {/* Full Screen Event Recap Modal */}
             {selectedEvent && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
-                    <div className="bg-slate-900 border border-slate-700 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative">
-                        <button
-                            onClick={() => setSelectedEvent(null)}
-                            className="absolute top-4 right-4 p-2 bg-black/50 rounded-full hover:bg-red-500/20 hover:text-red-500 transition-colors z-10"
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
-                        </button>
+                <div className="fixed inset-0 z-[100] bg-white overflow-y-auto animate-in fade-in duration-300">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+                        {/* Header Navigation */}
+                        <div className="flex justify-between items-center mb-12">
+                            <button
+                                onClick={() => setSelectedEvent(null)}
+                                className="inline-flex items-center gap-2 text-slate-500 hover:text-brand-accent font-bold transition-colors group"
+                            >
+                                <div className="p-2 rounded-full bg-slate-100 group-hover:bg-blue-50 transition-colors">
+                                    <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+                                </div>
+                                Back to Events
+                            </button>
+                            <span className="text-xs font-bold text-slate-300 uppercase tracking-widest">Event Recap</span>
+                        </div>
 
-                        <div className="flex flex-col md:flex-row">
-                            {/* Left Column: Media */}
-                            <div className="w-full md:w-1/3 bg-slate-800 p-6 md:p-8 flex flex-col gap-6 border-b md:border-b-0 md:border-r border-slate-700">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+                            {/* Left Column: Event Details & Metadata */}
+                            <div className="lg:col-span-4 space-y-10">
                                 {selectedEvent.eventPoster && (
-                                    <div className="rounded-xl overflow-hidden shadow-lg border border-slate-600/50">
+                                    <div className="rounded-2xl overflow-hidden shadow-card border border-slate-100 transform hover:scale-[1.02] transition-transform duration-500">
                                         <img src={selectedEvent.eventPoster} alt="Event Poster" className="w-full h-auto object-cover" />
                                     </div>
                                 )}
 
-                                {selectedEvent.speaker && (
-                                    <div className="text-center">
-                                        <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-3 border-2 border-neon-cyan shadow-[0_0_15px_rgba(0,243,255,0.3)]">
-                                            {selectedEvent.speakerImage ? (
-                                                <img src={selectedEvent.speakerImage} alt={selectedEvent.speaker} className="w-full h-full object-cover" />
-                                            ) : (
-                                                <div className="w-full h-full bg-slate-700 flex items-center justify-center text-3xl font-bold text-slate-500">
-                                                    {selectedEvent.speaker.charAt(0)}
-                                                </div>
+                                <div className="space-y-8">
+                                    {/* Speaker Card */}
+                                    {selectedEvent.speaker && (
+                                        <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center">
+                                            <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-4 border-white shadow-sm">
+                                                {selectedEvent.speakerImage ? (
+                                                    <img src={selectedEvent.speakerImage} alt={selectedEvent.speaker} className="w-full h-full object-cover" />
+                                                ) : (
+                                                    <div className="w-full h-full bg-brand-accent flex items-center justify-center text-2xl font-bold text-white">
+                                                        {selectedEvent.speaker.charAt(0)}
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <h4 className="text-brand-primary font-bold text-lg mb-1">{selectedEvent.speaker}</h4>
+                                            <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-3">Speaker</p>
+                                            {selectedEvent.speakerUrl && (
+                                                <a href={selectedEvent.speakerUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-brand-accent hover:text-blue-700 font-medium transition-colors">
+                                                    <Linkedin className="w-4 h-4" /> Connect
+                                                </a>
                                             )}
                                         </div>
-                                        <h4 className="text-white font-bold text-lg">{selectedEvent.speaker}</h4>
-                                        <a href={selectedEvent.speakerUrl} target="_blank" rel="noopener noreferrer" className="text-slate-400 text-sm hover:text-neon-cyan transition-colors">
-                                            Connect on LinkedIn
-                                        </a>
-                                    </div>
-                                )}
+                                    )}
+
+                                    {/* Organizer Card */}
+                                    {selectedEvent.organizer && (
+                                        <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center">
+                                            <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-4 border-white shadow-sm">
+                                                <div className="w-full h-full bg-slate-800 flex items-center justify-center text-2xl font-bold text-white">
+                                                    {selectedEvent.organizer.charAt(0)}
+                                                </div>
+                                            </div>
+                                            <h4 className="text-brand-primary font-bold text-lg mb-1">{selectedEvent.organizer}</h4>
+                                            <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-3">Organizer</p>
+                                            {selectedEvent.organizerUrl && (
+                                                <a href={selectedEvent.organizerUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-brand-accent hover:text-blue-700 font-medium transition-colors">
+                                                    <Linkedin className="w-4 h-4" /> Connect
+                                                </a>
+                                            )}
+                                        </div>
+                                    )}
+                                </div>
 
                                 {selectedEvent.presentationLink && selectedEvent.presentationLink !== '#' && (
                                     <a
                                         href={selectedEvent.presentationLink}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="btn-primary text-center justify-center w-full"
+                                        className="flex items-center justify-center w-full px-6 py-4 bg-slate-900 text-white font-bold rounded-xl shadow-lg hover:bg-slate-800 transition-all"
                                     >
                                         View Presentation
                                     </a>
@@ -161,28 +205,35 @@ const Events = () => {
                             </div>
 
                             {/* Right Column: Content */}
-                            <div className="w-full md:w-2/3 p-6 md:p-8">
-                                <span className="inline-block px-3 py-1 bg-neon-cyan/10 text-neon-cyan text-xs font-bold rounded-full mb-4 border border-neon-cyan/20">
-                                    {selectedEvent.type} RECAP
-                                </span>
-                                <h2 className="text-2xl md:text-3xl font-bold font-orbitron text-white mb-2 leading-tight">
-                                    {selectedEvent.title}
-                                </h2>
-                                <p className="text-slate-400 mb-8 flex items-center gap-2 text-sm">
-                                    <Calendar className="w-4 h-4" /> {selectedEvent.date}
-                                </p>
+                            <div className="lg:col-span-8">
+                                <div className="mb-10">
+                                    <span className="inline-block px-4 py-1.5 bg-blue-50 text-brand-accent text-sm font-bold rounded-full mb-6 border border-blue-100">
+                                        {selectedEvent.type} RECAP
+                                    </span>
+                                    <h1 className="text-4xl md:text-5xl font-bold text-brand-primary mb-6 leading-tight">
+                                        {selectedEvent.title}
+                                    </h1>
+                                    <div className="flex items-center gap-6 text-slate-500 font-medium border-b border-slate-100 pb-8">
+                                        <span className="flex items-center gap-2">
+                                            <Calendar className="w-5 h-5 text-brand-accent" /> {selectedEvent.date}
+                                        </span>
+                                    </div>
+                                </div>
 
-                                <div className="prose prose-invert prose-slate max-w-none text-slate-300 leading-relaxed space-y-4">
+                                <div className="prose prose-lg prose-slate max-w-none leading-relaxed text-slate-600">
                                     {selectedEvent.blogContent?.split('\n').map((paragraph, idx) => {
                                         const trimmed = paragraph.trim();
                                         if (!trimmed) return null;
                                         if (trimmed.startsWith('###')) {
-                                            return <h3 key={idx} className="text-xl font-bold text-white mt-6 mb-3">{trimmed.replace('###', '').trim()}</h3>;
+                                            return <h3 key={idx} className="text-2xl font-bold text-brand-primary mt-10 mb-4">{trimmed.replace('###', '').trim()}</h3>;
                                         }
                                         if (trimmed.startsWith('-')) {
-                                            return <li key={idx} className="ml-4 list-disc">{trimmed.replace('-', '').trim()}</li>
+                                            return <li key={idx} className="ml-4 list-disc marker:text-brand-accent pl-2 mb-2">{trimmed.replace('-', '').trim()}</li>
                                         }
-                                        return <p key={idx}>{trimmed}</p>;
+                                        if (trimmed.startsWith('**')) {
+                                            return <p key={idx} className="font-bold text-brand-primary mb-4">{trimmed.replace(/\*\*/g, '')}</p>;
+                                        }
+                                        return <p key={idx} className="mb-4">{trimmed}</p>;
                                     })}
                                 </div>
                             </div>

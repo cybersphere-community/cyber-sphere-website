@@ -2,7 +2,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import TechBackground from './components/TechBackground';
+// TechBackground removed for clean theme
 
 // Lazy load pages for performance optimization
 const Home = lazy(() => import('./pages/Home'));
@@ -26,7 +26,7 @@ function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen text-white">
-        <TechBackground />
+
         <Navbar />
         <main className="flex-grow pt-20 relative z-10">
           <Suspense fallback={<PageLoader />}>

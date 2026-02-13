@@ -11,17 +11,18 @@ export default {
                 mono: ['"JetBrains Mono"', 'monospace'],
             },
             colors: {
-                neon: {
-                    cyan: '#00f3ff',
-                    purple: '#bd00ff',
-                    green: '#0aff00',
-                    pink: '#ff0099',
-                },
-                cyber: {
-                    black: '#020205',
-                    dark: '#0a0f1e',
-                    slate: '#1e293b',
+                brand: {
+                    primary: '#0f172a', // Slate 900 (Headings)
+                    secondary: '#475569', // Slate 600 (Body)
+                    accent: '#2563eb', // Royal Blue (Buttons/Links)
+                    light: '#f8fafc', // Slate 50 (Backgrounds)
+                    surface: '#ffffff', // Pure White (Cards)
                 }
+            },
+            boxShadow: {
+                'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                'card': '0 10px 40px -10px rgba(0, 0, 0, 0.08)',
+                'glow': '0 0 20px rgba(37, 99, 235, 0.15)', // Subtle blue glow
             },
             animation: {
                 'glitch': 'glitch 1s linear infinite',

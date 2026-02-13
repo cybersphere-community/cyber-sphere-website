@@ -55,18 +55,18 @@ const teamMembers = [
 
 const Team = () => {
     return (
-        <div className="min-h-screen pt-20 pb-8 sm:pt-24 sm:pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="min-h-screen bg-slate-50 pt-24 pb-12 sm:pt-32 sm:pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto font-sans">
             <SEO
                 title="Our Team"
                 description="Meet the dedicated team behind Cyber Sphere Community."
                 keywords="cyber sphere team, core team, volunteers, cybersecurity experts"
             />
 
-            <div className="text-center mb-16">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-orbitron mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">
+            <div className="text-center mb-20">
+                <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-brand-primary tracking-tight">
                     Meet the Team
                 </h1>
-                <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+                <p className="text-slate-500 max-w-2xl mx-auto text-lg">
                     The passionate individuals driving the Cyber Sphere mission forward.
                 </p>
             </div>
@@ -75,59 +75,59 @@ const Team = () => {
                 {teamMembers.map((member, index) => (
                     <div
                         key={index}
-                        className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-xl p-4 sm:p-6 hover:border-cyan-500/30 transition-all duration-300 hover:bg-slate-800/60 flex flex-col sm:flex-row items-center sm:items-start gap-6 group"
+                        className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 hover:shadow-card hover:border-blue-100 transition-all duration-300 hover:-translate-y-1 flex flex-col sm:flex-row items-center sm:items-start gap-8 group"
                     >
                         {/* Circular Image */}
                         <div className="flex-shrink-0 relative">
-                            <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-slate-600 group-hover:border-cyan-500 transition-colors duration-300 ring-4 ring-slate-800/50 shadow-lg">
+                            <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-slate-50 shadow-md group-hover:border-brand-accent transition-colors duration-300">
                                 <img
                                     src={member.image}
                                     alt={member.name}
                                     loading="lazy"
-                                    width="112"
-                                    height="112"
-                                    className={`w-full h-full object-cover ${member.objectPosition || 'object-center'} transform group-hover:scale-110 transition-transform duration-500`}
+                                    width="128"
+                                    height="128"
+                                    className={`w-full h-full object-cover ${member.objectPosition || 'object-center'} transform group-hover:scale-110 transition-transform duration-700`}
                                 />
                             </div>
                         </div>
 
                         {/* Content */}
                         <div className="flex-1 text-center sm:text-left w-full">
-                            <h3 className="text-xl font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors">
+                            <h3 className="text-2xl font-bold text-brand-primary mb-1 group-hover:text-brand-accent transition-colors">
                                 {member.name}
                             </h3>
-                            <p className="text-slate-400 text-sm font-medium mb-1">{member.role}</p>
-                            <p className="text-slate-500 text-sm mb-3">{member.university}</p>
+                            <p className="text-brand-secondary font-medium mb-1 text-sm uppercase tracking-wide">{member.role}</p>
+                            <p className="text-slate-400 text-sm mb-4 italic">{member.university}</p>
 
                             {/* Interests / Tags */}
-                            <div className="flex flex-wrap justify-center sm:justify-start gap-2 mb-4">
+                            <div className="flex flex-wrap justify-center sm:justify-start gap-2 mb-6">
                                 {member.interests.map((interest, idx) => (
-                                    <span key={idx} className="bg-slate-900/50 text-cyan-400/80 text-xs px-2 py-1 rounded border border-slate-700/50">
+                                    <span key={idx} className="bg-blue-50 text-brand-accent text-xs font-bold px-3 py-1 rounded-full border border-blue-100">
                                         {interest}
                                     </span>
                                 ))}
                             </div>
 
                             {/* Social Links - Compact Row */}
-                            <div className="flex justify-center sm:justify-start gap-4 pt-2 border-t border-slate-700/30 mt-auto">
+                            <div className="flex justify-center sm:justify-start gap-4 pt-4 border-t border-slate-100 mt-auto">
                                 {member.portfolio && (
-                                    <a href={member.portfolio} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-cyan-400 transition-colors" title="Portfolio">
-                                        <Globe className="w-4 h-4" />
+                                    <a href={member.portfolio} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-brand-accent transition-colors p-1" title="Portfolio">
+                                        <Globe className="w-5 h-5" />
                                     </a>
                                 )}
                                 {member.linkedin && (
-                                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-500 transition-colors" title="LinkedIn">
-                                        <Linkedin className="w-4 h-4" />
+                                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#0077b5] transition-colors p-1" title="LinkedIn">
+                                        <Linkedin className="w-5 h-5" />
                                     </a>
                                 )}
                                 {member.github && (
-                                    <a href={member.github} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors" title="GitHub">
-                                        <Github className="w-4 h-4" />
+                                    <a href={member.github} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-slate-900 transition-colors p-1" title="GitHub">
+                                        <Github className="w-5 h-5" />
                                     </a>
                                 )}
                                 {member.email && (
-                                    <a href={`mailto:${member.email}`} className="text-slate-400 hover:text-red-500 transition-colors" title="Email">
-                                        <Mail className="w-4 h-4" />
+                                    <a href={`mailto:${member.email}`} className="text-slate-400 hover:text-red-500 transition-colors p-1" title="Email">
+                                        <Mail className="w-5 h-5" />
                                     </a>
                                 )}
                             </div>

@@ -100,7 +100,7 @@ const Home = () => {
                                 <div className="text-3xl font-bold text-brand-primary mb-1 group-hover:scale-110 transition-transform">
                                     {stat.value}
                                 </div>
-                                <div className="text-xs text-slate-400 font-bold tracking-widest">{stat.label}</div>
+                                <div className="text-xs text-slate-500 font-bold tracking-widest">{stat.label}</div>
                             </div>
                         ))}
                     </div>

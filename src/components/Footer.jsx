@@ -6,9 +6,12 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     <div>
-                        <div className="flex items-center mb-5 gap-1">
-                            <span className="bg-slate-900 text-white px-2 py-1 rounded font-bold tracking-tight">CYBER</span>
-                            <span className="text-brand-accent font-bold tracking-tight">SPHERE</span>
+                        <div className="flex flex-col leading-none mb-5">
+                            <span className="font-orbitron font-bold text-2xl tracking-wider">
+                                <span className="text-red-600">CYBER</span>
+                                <span className="text-slate-900 ml-1">SPHERE</span>
+                            </span>
+                            <span className="text-[0.6rem] font-bold tracking-[0.2em] text-slate-400 uppercase text-center w-full mt-1">Security Starts With Us</span>
                         </div>
                         <p className="text-slate-500 text-sm leading-relaxed">
                             Empowering the next generation of cybersecurity experts through community, knowledge, and innovation.

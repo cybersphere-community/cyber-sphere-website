@@ -21,7 +21,8 @@ export const pastEvents = [
         speakerUrl: "https://www.linkedin.com/in/naman-shah-8b67a51a4/",
         organizer: "Harsh Kanojia",
         organizerUrl: "https://www.linkedin.com/in/harsh-kanojia369/",
-        speakerImage: "https://ui-avatars.com/api/?name=Naman+Shah&background=0D8ABC&color=fff",
+        organizerImage: "/team/harsh.jpg",
+        speakerImage: "/team/naman.jpg",
         eventPoster: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&q=80&w=1000",
         presentationLink: "#",
         blogContent: `
@@ -63,7 +64,8 @@ Routers sit quietly between devices and the internet, trusted by everything and 
         speakerUrl: "https://www.linkedin.com/in/brijesh-palta/",
         organizer: "Harsh Kanojia",
         organizerUrl: "https://www.linkedin.com/in/harsh-kanojia369/",
-        speakerImage: "https://ui-avatars.com/api/?name=Brijesh+Palta&background=eb4034&color=fff",
+        organizerImage: "/team/harsh.jpg",
+        speakerImage: "/team/brijesh.jpg",
         eventPoster: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=1000",
         presentationLink: "#",
         blogContent: `
@@ -95,19 +97,5 @@ Each cloud layer introduces predictable weaknesses:
 - Strong IAM prevents a majority of incidents
 - Cloud security is continuous, not one-time
         `
-    },
-    {
-        id: 101,
-        title: "Intro to Bug Bounty Hunting",
-        date: "Aug 12, 2025",
-        type: "Workshop",
-        description: "A comprehensive guide for beginners to start their journey in bug bounty hunting."
-    },
-    {
-        id: 102,
-        title: "Cloud Security Fundamentals",
-        date: "June 05, 2025",
-        type: "Tech Talk",
-        description: "Exploring shared responsibility models and securing AWS/Azure environments."
     }
 ];

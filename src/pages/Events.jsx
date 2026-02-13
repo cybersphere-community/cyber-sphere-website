@@ -95,19 +95,30 @@ const Events = () => {
                                 </p>
 
                                 <div className="pt-6 border-t border-slate-100 mt-auto">
-                                    <div className="flex flex-wrap gap-y-2 gap-x-6 text-xs text-slate-500 font-bold uppercase tracking-wider mb-6">
+                                    <div className="flex flex-wrap gap-y-4 gap-x-8 text-xs text-slate-500 font-bold uppercase tracking-wider mb-6">
                                         {event.speaker && (
-                                            <div>
-                                                SPEAKER: <span className="text-brand-primary ml-1">{event.speaker}</span>
+                                            <div className="flex items-center gap-3">
+                                                {event.speakerImage && (
+                                                    <img src={event.speakerImage} alt={event.speaker} className="w-8 h-8 rounded-full object-cover border border-slate-200" />
+                                                )}
+                                                <div>
+                                                    <span className="block text-slate-400 mb-0.5 text-[10px]">Speaker</span>
+                                                    {event.speaker}
+                                                </div>
                                             </div>
                                         )}
                                         {event.organizer && (
-                                            <div>
-                                                ORGANIZER: <span className="text-brand-primary ml-1">{event.organizer}</span>
+                                            <div className="flex items-center gap-3">
+                                                {event.organizerImage && (
+                                                    <img src={event.organizerImage} alt={event.organizer} className="w-8 h-8 rounded-full object-cover border border-slate-200" />
+                                                )}
+                                                <div>
+                                                    <span className="block text-slate-400 mb-0.5 text-[10px]">Organizer</span>
+                                                    {event.organizer}
+                                                </div>
                                             </div>
                                         )}
                                     </div>
-
                                     {event.blogContent && (
                                         <button
                                             onClick={() => setSelectedEvent(event)}

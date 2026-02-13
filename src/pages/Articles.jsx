@@ -97,10 +97,14 @@ const Articles = () => {
                     <h1 className="text-3xl sm:text-5xl font-extrabold mb-5 text-white">
                         Cyber Insights
                     </h1>
-                    <p className="text-slate-300 max-w-2xl mx-auto text-lg leading-relaxed">
+                    <p className="text-slate-300 max-w-2xl mx-auto text-lg leading-relaxed mb-6">
                         Deep dives into cybersecurity, cloud defense, and threat evasion.
                         Aggregation of articles from Dev.to and Medium.
                     </p>
+                    <a href="https://www.linkedin.com/in/harsh-kanojia-300189178/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0077b5] hover:bg-[#006097] text-white rounded-lg transition-colors font-medium">
+                        <ExternalLink className="h-4 w-4" />
+                        Connect on LinkedIn
+                    </a>
                 </div>
 
                 {/* Search Bar */}

@@ -104,9 +104,14 @@ const BlogSection = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-end mb-8">
                     <h2 className="text-3xl font-bold text-white">Latest Articles</h2>
-                    <Link to="/articles" className="text-cyan-400 hover:text-cyan-300 flex items-center text-sm font-medium transition-all hover:scale-105">
-                        View all <ArrowRight className="ml-1 h-4 w-4" />
-                    </Link>
+                    <div className="flex gap-4">
+                        <a href="https://www.linkedin.com/in/harsh-kanojia-300189178/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#0077b5] flex items-center text-sm font-medium transition-all hover:scale-105">
+                            LinkedIn <ExternalLink className="ml-1 h-4 w-4" />
+                        </a>
+                        <Link to="/articles" className="text-cyan-400 hover:text-cyan-300 flex items-center text-sm font-medium transition-all hover:scale-105">
+                            View all <ArrowRight className="ml-1 h-4 w-4" />
+                        </Link>
+                    </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

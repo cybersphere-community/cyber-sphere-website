@@ -6,7 +6,7 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     <div>
-                        <div className="flex flex-col leading-none mb-5">
+                        <div className="flex flex-col items-center leading-none mb-5 content-start place-items-start">
                             <span className="font-orbitron font-bold text-2xl tracking-wider">
                                 <span className="text-red-600">CYBER</span>
                                 <span className="text-slate-900 ml-1">SPHERE</span>

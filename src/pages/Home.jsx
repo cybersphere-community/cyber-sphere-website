@@ -34,10 +34,10 @@ const Home = () => {
                                 <span className="text-brand-accent text-xs font-bold tracking-widest uppercase">Community Active</span>
                             </div>
 
-                            <h1 className="text-5xl sm:text-7xl font-bold font-orbitron tracking-tight leading-none flex flex-col items-start gap-0">
+                            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold font-orbitron tracking-tight leading-none flex flex-col items-start gap-0">
                                 <span className="text-red-600 drop-shadow-sm">CYBER</span>
                                 <span className="text-slate-900 drop-shadow-sm">SPHERE</span>
-                                <span className="text-sm sm:text-lg text-slate-500 font-sans font-bold tracking-[0.5em] uppercase mt-4 border-t border-slate-200 pt-4 w-full">Security Starts With Us</span>
+                                <span className="text-[10px] sm:text-sm md:text-lg text-slate-500 font-sans font-bold tracking-[0.3em] sm:tracking-[0.5em] uppercase mt-2 sm:mt-4 border-t border-slate-200 pt-2 sm:pt-4 w-full text-center">Security Starts With Us</span>
                             </h1>
 
                             <p className="text-xl text-slate-600 max-w-lg leading-relaxed">
@@ -58,28 +58,40 @@ const Home = () => {
                         </div>
 
                         {/* Right Content - Modern Visual */}
-                        <div className="relative animate-fade-in flex justify-center lg:justify-end" style={{ animationDelay: '0.2s' }}>
-                            <div className="relative w-72 h-72 sm:w-96 sm:h-96">
-                                {/* Decorative Rings */}
-                                <div className="absolute inset-0 rounded-full border-2 border-slate-100 animate-[spin_10s_linear_infinite]"></div>
-                                <div className="absolute inset-8 rounded-full border border-slate-200 animate-[spin_15s_linear_infinite_reverse]"></div>
+                        <div className="relative animate-fade-in flex justify-center items-center h-full min-h-[400px]" style={{ animationDelay: '0.2s' }}>
+                            <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] flex items-center justify-center">
+                                {/* Outer Glow */}
+                                <div className="absolute inset-0 bg-blue-100 rounded-full blur-3xl opacity-30 animate-pulse"></div>
 
-                                {/* Central Logo Container */}
-                                <div className="absolute inset-0 m-auto w-48 h-48 bg-white rounded-full shadow-[0_20px_50px_rgba(37,99,235,0.15)] flex items-center justify-center border border-slate-50 relative z-10">
-                                    <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-50 to-transparent"></div>
+                                {/* Outer Ring - Orbiting */}
+                                <div className="absolute inset-0 rounded-full border border-slate-200 animate-[spin_20s_linear_infinite]">
+                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-2 rounded-xl shadow-lg border border-slate-100">
+                                        <Shield className="w-5 h-5 text-brand-accent" />
+                                    </div>
+                                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-white p-2 rounded-xl shadow-lg border border-slate-100">
+                                        <Globe className="w-5 h-5 text-indigo-500" />
+                                    </div>
+                                </div>
+
+                                {/* Inner Ring - Orbiting Reverse */}
+                                <div className="absolute inset-12 sm:inset-16 rounded-full border border-slate-200 animate-[spin_15s_linear_infinite_reverse]">
+                                    <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 bg-white p-2 rounded-xl shadow-lg border border-slate-100">
+                                        <Terminal className="w-4 h-4 text-slate-700" />
+                                    </div>
+                                    <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 bg-white p-2 rounded-xl shadow-lg border border-slate-100">
+                                        <Code className="w-4 h-4 text-pink-500" />
+                                    </div>
+                                </div>
+
+                                {/* Central Core */}
+                                <div className="absolute w-32 h-32 sm:w-40 sm:h-40 bg-white rounded-full shadow-[0_0_50px_rgba(37,99,235,0.2)] flex items-center justify-center border border-slate-50 z-10 relative group hover:scale-105 transition-transform duration-500">
+                                    <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-50 to-transparent opacity-50"></div>
+                                    <div className="absolute inset-2 rounded-full border border-slate-100"></div>
                                     <img
                                         src="/terminal-logo.png.png"
                                         alt="Cyber Sphere"
-                                        className="w-28 h-28 object-contain relative z-20"
+                                        className="w-16 h-16 sm:w-20 sm:h-20 object-contain relative z-20 drop-shadow-lg"
                                     />
-                                </div>
-
-                                {/* Floating Elements */}
-                                <div className="absolute top-0 right-10 bg-white p-3 rounded-2xl shadow-lg border border-slate-100 animate-bounce delay-100">
-                                    <Shield className="w-6 h-6 text-brand-accent" />
-                                </div>
-                                <div className="absolute bottom-10 left-0 bg-white p-3 rounded-2xl shadow-lg border border-slate-100 animate-bounce delay-300">
-                                    <Terminal className="w-6 h-6 text-slate-700" />
                                 </div>
                             </div>
                         </div>

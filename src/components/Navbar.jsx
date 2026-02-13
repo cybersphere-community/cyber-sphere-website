@@ -20,7 +20,7 @@ const Navbar = () => {
                 <div className="flex items-center justify-between h-20">
                     <div className="flex items-center">
                         <Link to="/" className="flex items-center group gap-2">
-                            <div className="flex flex-col leading-none">
+                            <div className="flex flex-col items-center leading-none">
                                 <span className="font-orbitron font-bold text-2xl tracking-wider">
                                     <span className="text-red-600">CYBER</span>
                                     <span className="text-slate-900 ml-1">SPHERE</span>

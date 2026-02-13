@@ -22,8 +22,8 @@ const SEO = ({ title, description, canonical, keywords, image }) => {
     return (
         <Helmet>
             <title>{title ? `${title} | Cyber Sphere Community` : 'Cyber Sphere Community'}</title>
-            <meta name="description" content={description || "Join the Cyber Sphere Community - A hub for cybersecurity enthusiasts, students, and professionals."} />
-            <meta name="keywords" content={keywords || "cybersecurity, hacking, pentesting, ethical hacker, cyber sphere, community"} />
+            <meta name="description" content={description || "Join Cyber Sphere, the leading open community for ethical hackers, security researchers, and cyber professionals. access workshops, articles, and events."} />
+            <meta name="keywords" content={keywords || "cybersecurity, hacking, pentesting, ethical hacker, cyber sphere, infosec, bug bounty, cloud security, network defense, workshops"} />
             {canonical && <link rel="canonical" href={canonical} />}
 
             {/* Open Graph / Facebook */}

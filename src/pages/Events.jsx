@@ -188,9 +188,13 @@ const Events = () => {
                                     {selectedEvent.organizer && (
                                         <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center">
                                             <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-4 border-white shadow-sm">
-                                                <div className="w-full h-full bg-slate-800 flex items-center justify-center text-2xl font-bold text-white">
-                                                    {selectedEvent.organizer.charAt(0)}
-                                                </div>
+                                                {selectedEvent.organizerImage ? (
+                                                    <img src={selectedEvent.organizerImage} alt={selectedEvent.organizer} className="w-full h-full object-cover" />
+                                                ) : (
+                                                    <div className="w-full h-full bg-slate-800 flex items-center justify-center text-2xl font-bold text-white">
+                                                        {selectedEvent.organizer.charAt(0)}
+                                                    </div>
+                                                )}
                                             </div>
                                             <h4 className="text-brand-primary font-bold text-lg mb-1">{selectedEvent.organizer}</h4>
                                             <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-3">Organizer</p>

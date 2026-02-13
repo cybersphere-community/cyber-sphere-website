@@ -22,43 +22,59 @@ const SecurityQuotes = () => {
             setTimeout(() => {
                 setCurrentIndex((prevIndex) => (prevIndex + 1) % quotes.length);
                 setFade(true);
-            }, 500); // Wait for fade out
-        }, 5000); // Change every 5 seconds
+            }, 500);
+        }, 6000);
 
         return () => clearInterval(interval);
     }, []);
 
     return (
-        <div className="w-full max-w-4xl mx-auto mt-12 mb-8 px-4">
-            <div className="relative bg-slate-900/50 border-l-4 border-sky-500 rounded-r-xl p-6 backdrop-blur-sm">
-                <div className="absolute top-4 left-4 opacity-10">
-                    <Quote size={48} className="text-sky-400" />
+        <div className="w-full max-w-5xl mx-auto px-4 relative group">
+            {/* Background Decor */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-100 via-transparent to-red-50 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+
+            <div className="relative bg-white rounded-2xl p-8 md:p-12 shadow-card border border-slate-100 flex flex-col items-center text-center">
+                <div className="mb-6 relative">
+                    <div className="absolute -top-4 -left-6 opacity-10">
+                        <Quote size={60} className="text-brand-accent transform -scale-x-100" />
+                    </div>
+                    <Quote size={40} className="text-brand-accent opacity-20 relative z-10" />
                 </div>
 
-                <div className={`transition-opacity duration-500 ease-in-out ${fade ? 'opacity-100' : 'opacity-0'}`}>
-                    <p className="text-lg md:text-xl text-slate-200 font-mono italic mb-3 tracking-wide text-center">
+                <div className={`transition-all duration-500 ease-in-out transform ${fade ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                    <p className="text-xl md:text-3xl text-slate-700 font-medium leading-relaxed mb-6 max-w-3xl mx-auto font-sans">
                         "{quotes[currentIndex].text}"
                     </p>
-                    <p className="text-right text-sky-400 font-bold text-sm uppercase tracking-wider">
-                        — {quotes[currentIndex].author}
-                    </p>
+                    <div className="flex items-center justify-center gap-3">
+                        <div className="h-px w-12 bg-gradient-to-r from-transparent to-slate-300"></div>
+                        <p className="text-brand-primary font-bold text-sm tracking-[0.2em] uppercase font-orbitron">
+                            {quotes[currentIndex].author}
+                        </p>
+                        <div className="h-px w-12 bg-gradient-to-l from-transparent to-slate-300"></div>
+                    </div>
                 </div>
 
-                {/* Progress Bar */}
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-slate-800 rounded-br-xl overflow-hidden">
-                    <div
-                        key={currentIndex}
-                        className="h-full bg-gradient-to-r from-sky-500 to-cyan-400 animate-[progress_5s_linear]"
-                    ></div>
+                {/* Indicators */}
+                <div className="flex gap-2 mt-8">
+                    {quotes.map((_, idx) => (
+                        <button
+                            key={idx}
+                            onClick={() => {
+                                setFade(false);
+                                setTimeout(() => {
+                                    setCurrentIndex(idx);
+                                    setFade(true);
+                                }, 300);
+                            }}
+                            className={`h-1.5 rounded-full transition-all duration-300 ${idx === currentIndex
+                                    ? 'w-8 bg-brand-accent'
+                                    : 'w-2 bg-slate-200 hover:bg-slate-300'
+                                }`}
+                            aria-label={`Go to quote ${idx + 1}`}
+                        />
+                    ))}
                 </div>
             </div>
-
-            <style jsx>{`
-                @keyframes progress {
-                    from { width: 0%; }
-                    to { width: 100%; }
-                }
-            `}</style>
         </div>
     );
 };

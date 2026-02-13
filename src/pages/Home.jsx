@@ -64,7 +64,7 @@ const Home = () => {
                         </div>
 
                         {/* Right Content - 3D/Tech Visual */}
-                        <div className="relative fade-in hidden lg:block" style={{ animationDelay: '0.2s' }}>
+                        <div className="relative fade-in mt-12 lg:mt-0" style={{ animationDelay: '0.2s' }}>
                             <div className="relative w-full aspect-square max-w-md mx-auto flex items-center justify-center">
                                 {/* Outer Glow Ring */}
                                 <div className="absolute inset-0 rounded-full border border-neon-cyan/20 shadow-[0_0_60px_rgba(0,243,255,0.1)] animate-pulse"></div>

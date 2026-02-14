@@ -54,8 +54,25 @@ const Footer = () => {
                         </a>
                     </div>
                 </div>
-                <div className="mt-12 border-t border-slate-200 pt-8 text-center">
-                    <p className="text-slate-500 text-sm">
+                <div className="mt-12 border-t border-slate-200 pt-8">
+                    {/* Visitor Counter */}
+                    <div className="flex justify-center items-center gap-3 mb-6">
+                        <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-xl shadow-sm border border-slate-200">
+                            <svg className="w-5 h-5 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            <span className="text-slate-600 text-sm font-semibold">Total Visitors:</span>
+                            <img
+                                src="https://hits.sh/cybersphere-community.github.io.svg?style=flat&label=&color=2563eb&labelColor=f1f5f9"
+                                alt="Visitor Count"
+                                className="h-5"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Copyright */}
+                    <p className="text-slate-500 text-sm text-center">
                         &copy; {new Date().getFullYear()} Cyber Sphere. Open Community. All rights reserved. <span className="opacity-50 text-xs ml-2">v2.0 Premium</span>
                     </p>
                 </div>

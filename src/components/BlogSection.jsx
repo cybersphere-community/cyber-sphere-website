@@ -108,10 +108,10 @@ const BlogSection = () => {
                         <p className="text-slate-500">Insights from our team of researchers and developers.</p>
                     </div>
                     <div className="flex gap-4">
-                        <a href="https://www.linkedin.com/in/harsh-kanojia-300189178/" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-[#0077b5] flex items-center text-sm font-bold transition-all hover:scale-105">
+                        <a href="https://www.linkedin.com/in/harsh-kanojia-300189178/" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-[#0077b5] flex items-center text-sm font-bold transition-all ">
                             LinkedIn <ExternalLink className="ml-1 h-4 w-4" />
                         </a>
-                        <Link to="/articles" className="text-brand-accent hover:text-blue-700 flex items-center text-sm font-bold transition-all hover:scale-105">
+                        <Link to="/articles" className="text-brand-accent hover:text-blue-700 flex items-center text-sm font-bold transition-all ">
                             View all <ArrowRight className="ml-1 h-4 w-4" />
                         </Link>
                     </div>
@@ -119,7 +119,7 @@ const BlogSection = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {blogs.map((post) => (
-                        <article key={post.id} className="bg-white rounded-2xl overflow-hidden group shadow-sm border border-slate-200 hover:shadow-card hover:-translate-y-1 transition-all duration-300 relative flex flex-col h-full">
+                        <article key={post.id} className="bg-white rounded-2xl overflow-hidden group shadow-sm border border-slate-200   transition-all duration-300 relative flex flex-col h-full">
 
                             <a href={post.url} target="_blank" rel="noopener noreferrer" className="block h-full flex flex-col relative z-10">
                                 <div className="relative h-52 overflow-hidden">
@@ -128,7 +128,7 @@ const BlogSection = () => {
                                         src={post.image}
                                         alt={post.title}
                                         loading="lazy"
-                                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                                        className="w-full h-full object-cover transform  transition-transform duration-700"
                                         onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1000' }}
                                     />
                                     <div className="absolute top-4 right-4 z-20">

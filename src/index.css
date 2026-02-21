@@ -6,53 +6,69 @@
 :root {
   --brand-primary: #0f172a;
   --brand-accent: #2563eb;
+  --neon-purple: #bd00ff;
+  --neon-cyan: #00f3ff;
+}
+
+/* Premium Dark System */
+.dark {
+  --brand-primary: #f8fafc;
+  --brand-accent: #00f3ff;
+  --neon-purple: #bd00ff;
+  --neon-cyan: #00f3ff;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  @apply text-slate-600 bg-slate-50 font-sans overflow-x-hidden;
+  @apply text-slate-600 dark:text-slate-300 bg-slate-50 dark:bg-slate-950 font-sans overflow-x-hidden transition-colors duration-300;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.03) 0, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(189, 0, 255, 0.03) 0, transparent 50%);
 }
 
-/* Custom Scrollbar - Minimalist */
+.dark body {
+  background-image:
+    radial-gradient(at 0% 0%, rgba(0, 243, 255, 0.05) 0, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(189, 0, 255, 0.05) 0, transparent 50%);
+}
+
+/* Custom Scrollbar - Smooth & Elegant */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  @apply bg-slate-100 dark:bg-slate-900 border-l border-slate-200/50 dark:border-slate-800/50;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 4px;
+  @apply bg-slate-300 dark:bg-slate-700 border-2 border-solid border-slate-100 dark:border-slate-900;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  @apply bg-slate-400 dark:bg-slate-600;
 }
 
 /* Utility Classes - Premium */
 .text-gradient {
-  background: linear-gradient(to right, var(--brand-primary), var(--brand-accent));
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-accent) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.card-hover {
-  transition: all 0.3s ease;
-}
 
-.card-hover:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
 
 .btn-primary {
-  @apply px-8 py-3 bg-blue-600 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:bg-blue-700 flex items-center gap-2;
+  @apply px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-xl transition-all duration-300 transform flex items-center gap-2;
 }
 
 .btn-secondary {
-  @apply px-8 py-3 bg-white text-slate-800 font-bold rounded-lg border border-slate-200 transition-all duration-300 hover:bg-slate-50 hover:border-slate-300 hover:shadow-md flex items-center gap-2;
+  @apply px-8 py-3 bg-white/80 backdrop-blur-md text-slate-800 font-bold rounded-xl border border-slate-200/60 transition-all duration-300 hover:bg-slate-50 hover:border-slate-300 flex items-center gap-2;
 }
 
 .section-title {
@@ -75,16 +91,17 @@ body {
 
 .glass-panel {
   background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
 }
 
 /* Animations */
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(20px);
   }
 
   to {
@@ -94,5 +111,23 @@ body {
 }
 
 .animate-fade-in {
-  animation: fade-in 0.5s ease-out forwards;
+  animation: fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }

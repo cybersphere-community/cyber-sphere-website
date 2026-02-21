@@ -12,46 +12,42 @@ export const upcomingEvents = [
 
 export const pastEvents = [
     {
-        id: 103,
-        title: "IoT Hacking Workshop: Router-Level Security Failures",
-        date: "Jan 29, 2026",
+        id: 105,
+        title: "Linux Exploitation Workshop: CVE-2021-4034 (PwnKit)",
+        date: "Feb 21, 2026",
         type: "Workshop",
-        description: "Hands-on session on router-level vulnerabilities, understanding IoT architecture, and attacker methodology.",
-        speaker: "Naman Shah",
-        speakerUrl: "https://www.linkedin.com/in/naman-shah-8b67a51a4/",
+        description: "Insightful workshop on CVE-2021-4034, focusing on Polkit privilege escalation techniques and defense strategies in a hands-on environment.",
+        speaker: "Himanshi Shrivastava",
+        speakerUrl: "https://www.linkedin.com/in/himanshi-shrivastava-8000a5180/",
         organizer: "Harsh Kanojia",
         organizerUrl: "https://www.linkedin.com/in/harsh-kanojia369/",
         organizerImage: "/team/harsh.jpg",
-        speakerImage: "/team/naman.jpg",
-        eventPoster: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&q=80&w=1000",
-        presentationLink: "#",
+        speakerImage: "/team/himanshi.jpg",
+        eventPoster: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&q=80&w=1000",
+        presentationLink: "https://drive.google.com/file/d/1sbbALTGje8FlXuhIaLeHKisiKruaZU4P/view?usp=sharing",
         blogContent: `
 ### Context
-I recently delivered a hands-on IoT Hacking workshop focused on router-level vulnerabilities. No, this was not about “hacking like in movies.” And no, it did not involve magical zero-days. The session was intentionally grounded in reality: understanding how IoT systems are built, where they break, and why insecure routers remain the easiest and most reliable entry point for attackers.
+We recently hosted a hands-on Linux Exploitation Workshop focusing on one of the most infamous privilege escalation vulnerabilities in recent years: CVE-2021-4034, also known as PwnKit. This session provided a deep dive into how the Polkit \`pkexec\` utility can be abused to gain root privileges on major Linux distributions.
 
 ### Workshop Objective
-The workshop had a straightforward agenda:
-- Break down IoT systems into layers instead of treating them as mystery boxes
-- Explain why routers fail security reviews repeatedly
-- Show how attackers think before they ever touch an exploit
+The goal of this workshop was to understand the mechanics behind the PwnKit vulnerability and how to defend against it.
+- Analyze the root cause of CVE-2021-4034 in the Polkit source code
+- Demonstrate a live privilege escalation attack from a standard user to root
+- Implement mitigation and patching strategies
 
-### Understanding IoT Architecture
-We started with the basics that are often skipped: Device layer, Network layer, Processing layer, Application layer. Data flows from sensors, through routers, into cloud platforms, and finally to user-facing applications. If this chain breaks at any point, the entire system becomes unreliable. **Spoiler: it usually breaks at the router.**
+### Understanding the Vulnerability
+We explored how \`pkexec\` mishandles command-line arguments. By passing a specific out-of-bounds argument array, an attacker can manipulate the environment variables and force \`pkexec\` to execute arbitrary code with root privileges.
 
-### Layer-Specific Attack Surfaces
-Each IoT layer introduces predictable weaknesses:
-- Devices suffer from weak firmware and hardcoded credentials
-- Networks fail due to exposed router interfaces, outdated firmware, and default passwords
-- Cloud platforms are misconfigured more often than people like to admit
-- Applications rely on fragile authentication and session handling
-
-### Why Routers Are Always the First Casualty
-Routers sit quietly between devices and the internet, trusted by everything and updated by almost no one. Once compromised, attackers can: Observe or manipulate IoT traffic, Disrupt device communication, Move laterally across the network. One router. Total visibility. Minimal effort.
+### Defensive Strategies
+After the exploitation phase, we shifted focus to remediation. We discussed how to:
+- Identify vulnerable versions of Polkit across different Linux distributions
+- Apply the official patches released by vendors
+- Implement temporary mitigations by stripping the SUID bit from the \`pkexec\` binary for legacy systems that cannot be immediately patched.
 
 ### Key Takeaways
-- Most IoT compromises start at the router
-- Attacks succeed because basics are ignored, not because attackers are brilliant
-- Securing routers properly eliminates a large percentage of IoT risk
+- Even ubiquitous, heavily scrutinized utilities can harbor critical vulnerabilities for years.
+- Understanding the root cause of an exploit is more valuable than just running public proof-of-concept scripts.
+- Defense-in-depth and timely patching are crucial for maintaining system integrity.
         `
     },
     {
@@ -97,5 +93,49 @@ Each cloud layer introduces predictable weaknesses:
 - Strong IAM prevents a majority of incidents
 - Cloud security is continuous, not one-time
         `
+    },
+    {
+        id: 103,
+        title: "IoT Hacking Workshop: Router-Level Security Failures",
+        date: "Jan 29, 2026",
+        type: "Workshop",
+        description: "Hands-on session on router-level vulnerabilities, understanding IoT architecture, and attacker methodology.",
+        speaker: "Naman Shah",
+        speakerUrl: "https://www.linkedin.com/in/naman-shah-8b67a51a4/",
+        organizer: "Harsh Kanojia",
+        organizerUrl: "https://www.linkedin.com/in/harsh-kanojia369/",
+        organizerImage: "/team/harsh.jpg",
+        speakerImage: "/team/naman.jpg",
+        eventPoster: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&q=80&w=1000",
+        presentationLink: "https://drive.google.com/file/d/14p1vvrKvrqUkUfOLs82kt5mbDJWwdOjt/view?usp=sharing",
+        blogContent: `
+### Context
+I recently delivered a hands-on IoT Hacking workshop focused on router-level vulnerabilities. No, this was not about “hacking like in movies.” And no, it did not involve magical zero-days. The session was intentionally grounded in reality: understanding how IoT systems are built, where they break, and why insecure routers remain the easiest and most reliable entry point for attackers.
+
+### Workshop Objective
+The workshop had a straightforward agenda:
+- Break down IoT systems into layers instead of treating them as mystery boxes
+- Explain why routers fail security reviews repeatedly
+- Show how attackers think before they ever touch an exploit
+
+### Understanding IoT Architecture
+We started with the basics that are often skipped: Device layer, Network layer, Processing layer, Application layer. Data flows from sensors, through routers, into cloud platforms, and finally to user-facing applications. If this chain breaks at any point, the entire system becomes unreliable. **Spoiler: it usually breaks at the router.**
+
+### Layer-Specific Attack Surfaces
+Each IoT layer introduces predictable weaknesses:
+- Devices suffer from weak firmware and hardcoded credentials
+- Networks fail due to exposed router interfaces, outdated firmware, and default passwords
+- Cloud platforms are misconfigured more often than people like to admit
+- Applications rely on fragile authentication and session handling
+
+### Why Routers Are Always the First Casualty
+Routers sit quietly between devices and the internet, trusted by everything and updated by almost no one. Once compromised, attackers can: Observe or manipulate IoT traffic, Disrupt device communication, Move laterally across the network. One router. Total visibility. Minimal effort.
+
+### Key Takeaways
+- Most IoT compromises start at the router
+- Attacks succeed because basics are ignored, not because attackers are brilliant
+- Securing routers properly eliminates a large percentage of IoT risk
+        `
     }
 ];
+

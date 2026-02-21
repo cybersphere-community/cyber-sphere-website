@@ -1,5 +1,6 @@
 import SEO from '../components/SEO';
 import { Linkedin, Github, Globe, Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const teamMembers = [
     {
@@ -55,7 +56,7 @@ const teamMembers = [
 
 const Team = () => {
     return (
-        <div className="min-h-screen bg-slate-50 pt-24 pb-12 sm:pt-32 sm:pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto font-sans">
+        <div className="min-h-screen bg-transparent pt-24 pb-12 sm:pt-32 sm:pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto font-sans">
             <SEO
                 title="Our Team"
                 description="Meet the dedicated team behind Cyber Sphere Community."
@@ -63,19 +64,23 @@ const Team = () => {
             />
 
             <div className="text-center mb-20">
-                <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-brand-primary tracking-tight">
+                <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-brand-primary tracking-tight dark:text-white">
                     Meet the Team
                 </h1>
-                <p className="text-slate-500 max-w-2xl mx-auto text-lg">
+                <p className="text-slate-500 max-w-2xl mx-auto text-lg dark:text-slate-400">
                     The passionate individuals driving the Cyber Sphere mission forward.
                 </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {teamMembers.map((member, index) => (
-                    <div
+                    <motion.div
                         key={index}
-                        className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 hover:shadow-card hover:border-blue-100 transition-all duration-300 hover:-translate-y-1 flex flex-col sm:flex-row items-center sm:items-start gap-8 group"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 hover:border-blue-100 transition-all duration-300 flex flex-col sm:flex-row items-center sm:items-start gap-8 group dark:bg-white/10 backdrop-blur-md dark:border-white/10"
                     >
                         {/* Circular Image */}
                         <div className="flex-shrink-0 relative">
@@ -86,14 +91,14 @@ const Team = () => {
                                     loading="lazy"
                                     width="128"
                                     height="128"
-                                    className={`w-full h-full object-cover ${member.objectPosition || 'object-center'} transform group-hover:scale-110 transition-transform duration-700`}
+                                    className={`w-full h-full object-cover ${member.objectPosition || 'object-center'} transform  transition-transform duration-700`}
                                 />
                             </div>
                         </div>
 
                         {/* Content */}
                         <div className="flex-1 text-center sm:text-left w-full">
-                            <h3 className="text-2xl font-bold text-brand-primary mb-1 group-hover:text-brand-accent transition-colors">
+                            <h3 className="text-2xl font-bold text-brand-primary mb-1 group-hover:text-brand-accent transition-colors dark:text-white">
                                 {member.name}
                             </h3>
                             <p className="text-brand-secondary font-medium mb-1 text-sm uppercase tracking-wide">{member.role}</p>
@@ -132,7 +137,7 @@ const Team = () => {
                                 )}
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </div>

@@ -132,9 +132,9 @@ const CallForSpeakers = () => {
                             ></textarea>
                         </div>
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <button type="submit" className="flex-1 btn-primary justify-center text-lg py-3 shadow-lg shadow-blue-500/20 hover:shadow-blue-600/30 group">
+                            <button type="submit" className="flex-1 btn-primary justify-center text-lg py-3 shadow-lg shadow-blue-500/20  group">
                                 <span>Submit via Email</span>
-                                <Send size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                                <Send size={18} className="ml-2  transition-transform" />
                             </button>
 
                             <button
@@ -143,7 +143,7 @@ const CallForSpeakers = () => {
                                 className="flex-1 inline-flex items-center justify-center text-lg font-bold text-white bg-[#25D366] hover:bg-[#22bf5b] py-3 rounded-xl shadow-lg shadow-green-500/20 transition-all duration-300 group"
                             >
                                 <span>WhatsApp</span>
-                                <MessageCircle size={18} className="ml-2 group-hover:scale-110 transition-transform" />
+                                <MessageCircle size={18} className="ml-2  transition-transform" />
                             </button>
                         </div>
                     </form>

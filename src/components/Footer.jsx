@@ -1,9 +1,10 @@
-import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Mail, Github, Linkedin, Twitter, Shield } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="bg-slate-50 border-t border-slate-200 mt-auto">
-            <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        <footer className="bg-white dark:bg-slate-950/60 border-t border-slate-200 dark:border-slate-800 transition-colors duration-300 relative z-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     <div>
                         <div className="flex flex-col items-center leading-none mb-5 content-start place-items-start">
@@ -35,16 +36,16 @@ const Footer = () => {
                     <div>
                         <h3 className="text-lg font-bold text-slate-900 mb-5">Connect With Us</h3>
                         <div className="flex gap-4 mb-4">
-                            <a href="https://github.com/cybersphere-community" className="text-slate-400 hover:text-brand-accent transition-colors p-2 hover:bg-white hover:shadow-sm rounded-lg border border-transparent hover:border-slate-100">
+                            <a href="https://github.com/cybersphere-community" className="text-slate-400 hover:text-brand-accent transition-colors p-2 hover:bg-white  rounded-lg border border-transparent hover:border-slate-100">
                                 <Github className="h-6 w-6" />
                             </a>
-                            <a href="#" className="text-slate-400 hover:text-brand-accent transition-colors p-2 hover:bg-white hover:shadow-sm rounded-lg border border-transparent hover:border-slate-100">
+                            <a href="#" className="text-slate-400 hover:text-brand-accent transition-colors p-2 hover:bg-white  rounded-lg border border-transparent hover:border-slate-100">
                                 <Twitter className="h-6 w-6" />
                             </a>
-                            <a href="#" className="text-slate-400 hover:text-brand-accent transition-colors p-2 hover:bg-white hover:shadow-sm rounded-lg border border-transparent hover:border-slate-100">
+                            <a href="#" className="text-slate-400 hover:text-brand-accent transition-colors p-2 hover:bg-white  rounded-lg border border-transparent hover:border-slate-100">
                                 <Linkedin className="h-6 w-6" />
                             </a>
-                            <a href="mailto:cybersphere.official@outlook.com" className="text-slate-400 hover:text-brand-accent transition-colors p-2 hover:bg-white hover:shadow-sm rounded-lg border border-transparent hover:border-slate-100">
+                            <a href="mailto:cybersphere.official@outlook.com" className="text-slate-400 hover:text-brand-accent transition-colors p-2 hover:bg-white  rounded-lg border border-transparent hover:border-slate-100">
                                 <Mail className="h-6 w-6" />
                             </a>
                         </div>

@@ -8,9 +8,9 @@ const Achievements = () => {
                 description="Showcasing the victories and milestones of our community members in CTFs, Bug Bounties, and Research."
                 keywords="achievements, ctf winners, bug bounty, cybersecurity awards, hall of fame"
             />
-            <h1 className="text-4xl font-bold text-brand-primary mb-8 tracking-tight">Community Achievements</h1>
-            <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
-                <p className="text-slate-500 text-lg leading-relaxed">Showcasing the victories and milestones of our community members in CTFs, Bug Bounties, and Research.</p>
+            <h1 className="text-4xl font-bold text-brand-primary mb-8 tracking-tight dark:text-white">Community Achievements</h1>
+            <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm dark:bg-white/5 backdrop-blur-md">
+                <p className="text-slate-500 text-lg leading-relaxed dark:text-slate-400">Showcasing the victories and milestones of our community members in CTFs, Bug Bounties, and Research.</p>
             </div>
         </div>
     );

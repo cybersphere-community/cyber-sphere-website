@@ -8,12 +8,12 @@ const News = () => {
                 description="Latest updates, hackathon announcements, and community news from Cyber Sphere."
                 keywords="cybersecurity news, hackathons, community updates, events, announcements"
             />
-            <h1 className="text-4xl font-bold text-brand-primary mb-8 tracking-tight">Latest News</h1>
+            <h1 className="text-4xl font-bold text-brand-primary mb-8 tracking-tight dark:text-white">Latest News</h1>
             <div className="space-y-6">
-                <article className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-card transition-all duration-300">
+                <article className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm transition-all duration-300 dark:bg-white/5 backdrop-blur-md">
                     <span className="inline-block px-3 py-1 bg-green-50 text-green-600 text-xs font-bold rounded-full mb-4 border border-green-100 uppercase tracking-wider">Announcement</span>
-                    <h2 className="text-2xl font-bold text-brand-primary mb-3">Cyber Sphere Community Website Launch</h2>
-                    <p className="text-slate-500 mb-6 leading-relaxed">
+                    <h2 className="text-2xl font-bold text-brand-primary mb-3 dark:text-white">Cyber Sphere Community Website Launch</h2>
+                    <p className="text-slate-500 mb-6 leading-relaxed dark:text-slate-400">
                         We are excited to unveil the new digital home for Cyber Sphere. This platform will serve as the central hub for our workshops, articles, and community initiatives.
                         Stay tuned for upcoming CTF announcements and speaker sessions.
                     </p>

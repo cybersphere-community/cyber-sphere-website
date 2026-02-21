@@ -11,20 +11,25 @@
     perspective: 1000px;
 }
 
-/* Floating Particles - Square pixels for tech feel */
+/* Floating Particles - Tech Icons */
 .tech-particle {
     position: absolute;
-    bottom: -10px;
-    background: var(--neon-cyan);
-    width: 4px;
-    height: 4px;
-    box-shadow: 0 0 8px var(--neon-cyan);
+    bottom: -50px;
+    color: #1e293b;
+    /* Slate 800 (Dark Techy Grey/Black) */
+    will-change: transform;
     animation: float linear infinite;
     pointer-events: none;
-    opacity: 0.6;
+    opacity: 0.15;
+    /* Subtly floating in background */
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.1));
 }
 
-/* Scanning Lines */
+.tech-particle svg {
+    display: block;
+}
+
+/* Updated Scanning Lines */
 .scan-line {
     position: absolute;
     left: 0;
@@ -32,21 +37,20 @@
     height: 1px;
     background: linear-gradient(90deg,
             transparent 0%,
-            var(--neon-cyan) 50%,
+            rgba(0, 0, 0, 0.05) 50%,
             transparent 100%);
-    box-shadow: 0 0 10px var(--neon-cyan);
-    animation: scan 6s linear infinite;
-    opacity: 0.3;
+    animation: scan 10s linear infinite;
+    opacity: 0.1;
+    will-change: transform;
 }
 
 .scan-line-2 {
-    animation-delay: 3s;
-    animation-duration: 8s;
-    background: linear-gradient(90deg,
-            transparent 0%,
-            var(--neon-purple) 50%,
-            transparent 100%);
+    animation-delay: 5s;
+    animation-duration: 15s;
+    opacity: 0.05;
 }
+
+/* Removed redundant scan-line-2 neon background */
 
 @keyframes scan {
     0% {
@@ -69,74 +73,75 @@
 }
 
 /* Corner Accents - HUD Style */
-.corner-accent {
+.corner_accent {
     position: absolute;
-    width: 100px;
-    height: 100px;
-    border: 1px solid rgba(0, 243, 255, 0.1);
-    opacity: 0.5;
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    opacity: 0.3;
     transition: all 0.5s ease;
+    will-change: opacity;
 }
 
-.corner-accent::after {
+.corner_accent::after {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--neon-cyan);
+    width: 15px;
+    height: 15px;
+    border: 1.5px solid #000;
     transition: all 0.3s ease;
 }
 
-.corner-tl {
-    top: 40px;
-    left: 40px;
+.corner_tl {
+    top: 30px;
+    left: 30px;
     border-right: none;
     border-bottom: none;
 }
 
-.corner-tl::after {
+.corner_tl::after {
     top: 0;
     left: 0;
     border-right: none;
     border-bottom: none;
 }
 
-.corner-tr {
-    top: 40px;
-    right: 40px;
+.corner_tr {
+    top: 30px;
+    right: 30px;
     border-left: none;
     border-bottom: none;
 }
 
-.corner-tr::after {
+.corner_tr::after {
     top: 0;
     right: 0;
     border-left: none;
     border-bottom: none;
 }
 
-.corner-bl {
-    bottom: 40px;
-    left: 40px;
+.corner_bl {
+    bottom: 30px;
+    left: 30px;
     border-right: none;
     border-top: none;
 }
 
-.corner-bl::after {
+.corner_bl::after {
     bottom: 0;
     left: 0;
     border-right: none;
     border-top: none;
 }
 
-.corner-br {
-    bottom: 40px;
-    right: 40px;
+.corner_br {
+    bottom: 30px;
+    right: 30px;
     border-left: none;
     border-top: none;
 }
 
-.corner-br::after {
+.corner_br::after {
     bottom: 0;
     right: 0;
     border-left: none;
@@ -152,11 +157,11 @@
     }
 
     50% {
-        opacity: 0.8;
-        box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+        opacity: 0.6;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     }
 }
 
-.corner-accent::after {
+.corner_accent::after {
     animation: hudPulse 4s infinite;
 }

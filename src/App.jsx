@@ -19,10 +19,11 @@ const CallForSpeakersPage = lazy(() => import('./pages/CallForSpeakersPage'));
 
 // Loading component
 const PageLoader = () => (
-  <div className="flex justify-center items-center custom-min-h-screen">
-    <div className="relative w-16 h-16">
-      <div className="absolute top-0 left-0 w-full h-full border-4 border-slate-700/50 rounded-full dark:border-slate-300/20"></div>
-      <div className="absolute top-0 left-0 w-full h-full border-4 border-t-sky-500 rounded-full animate-spin"></div>
+  <div className="flex justify-center items-center h-[60vh] w-full">
+    <div className="relative w-12 h-12">
+      <div className="absolute inset-0 border-4 border-red-500/30 rounded-full animate-pulse"></div>
+      <div className="absolute inset-0 border-4 border-t-red-600 rounded-full animate-spin"></div>
+      <div className="absolute inset-2 border-4 border-t-blue-600 rounded-full animate-spin-slow"></div>
     </div>
   </div>
 );

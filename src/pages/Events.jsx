@@ -269,9 +269,33 @@ const Events = () => {
                                                 href={selectedEvent.presentationLink}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-accent hover:bg-blue-700 text-white text-sm font-bold rounded-xl transition-colors shadow-md shadow-blue-500/20"
+                                                style={{ textDecoration: 'none' }}
+                                                className="docs-btn-link"
                                             >
-                                                <Download className="w-4 h-4" /> Download Presentation
+                                                <button className="docs-btn">
+                                                    <div className="docs-folder-container">
+                                                        {/* File Back */}
+                                                        <svg className="docs-file-back" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 30">
+                                                            <rect x="0" y="4" width="40" height="26" rx="3" ry="3" fill="#1e40af" />
+                                                            <rect x="0" y="0" width="18" height="8" rx="3" ry="3" fill="#2563eb" />
+                                                        </svg>
+                                                        {/* File Page */}
+                                                        <svg className="docs-file-page" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 36">
+                                                            <rect width="28" height="36" rx="2" ry="2" fill="#eff6ff" />
+                                                            <rect x="4" y="8" width="20" height="2" rx="1" fill="#bfdbfe" />
+                                                            <rect x="4" y="13" width="20" height="2" rx="1" fill="#bfdbfe" />
+                                                            <rect x="4" y="18" width="14" height="2" rx="1" fill="#bfdbfe" />
+                                                        </svg>
+                                                        {/* File Front */}
+                                                        <svg className="docs-file-front" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 30">
+                                                            <rect x="0" y="0" width="40" height="30" rx="3" ry="3" fill="#2563eb" />
+                                                            <rect x="4" y="8" width="32" height="2" rx="1" fill="#93c5fd" />
+                                                            <rect x="4" y="14" width="32" height="2" rx="1" fill="#93c5fd" />
+                                                            <rect x="4" y="20" width="20" height="2" rx="1" fill="#93c5fd" />
+                                                        </svg>
+                                                    </div>
+                                                    <span className="docs-btn-text">Download Presentation</span>
+                                                </button>
                                             </a>
                                         )}
                                     </div>

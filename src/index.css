@@ -196,3 +196,79 @@ body {
     opacity: 1;
   }
 }
+
+/* Document Download Button - Events Page */
+.docs-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: fit-content;
+  height: 45px;
+  border: none;
+  padding: 0px 15px;
+  border-radius: 5px;
+  background-color: #1e40af;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.docs-folder-container {
+  width: 40px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.docs-file-back {
+  z-index: 1;
+  width: 80%;
+  height: auto;
+}
+
+.docs-file-page {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  z-index: 2;
+  transition: all 0.3s ease-out;
+  top: 0;
+}
+
+.docs-file-front {
+  width: 85%;
+  height: auto;
+  position: absolute;
+  z-index: 3;
+  opacity: 0.95;
+  transform-origin: bottom;
+  transition: all 0.3s ease-out;
+  top: 0;
+}
+
+.docs-btn-text {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.docs-btn:hover .docs-file-page {
+  transform: translateY(-5px);
+}
+
+.docs-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.docs-btn:active {
+  transform: scale(0.95);
+}
+
+.docs-btn:hover .docs-file-front {
+  transform: rotateX(30deg);
+}

@@ -5,6 +5,13 @@ import { Linkedin } from 'lucide-react';
 
 const speakers = [
     {
+        name: "Harsh Kanojia",
+        role: "Founder & Security Researcher",
+        image: "/team/harsh.jpg",
+        description: "Driving community initiatives and workshops. Researching offensive security, malware analysis, and LLM hacking.",
+        linkedin: "https://www.linkedin.com/in/harsh-kanojia369/"
+    },
+    {
         name: "Naman Shah",
         role: "Security Researcher",
         image: "/team/naman.jpg",
@@ -17,13 +24,6 @@ const speakers = [
         image: "/team/brijesh.jpg",
         description: "Specialist in cloud infrastructure security, Shared Responsibility Models, and securing cloud-native applications.",
         linkedin: "https://www.linkedin.com/in/brijesh-palta/"
-    },
-    {
-        name: "Harsh Kanojia",
-        role: "Founder & Security Researcher",
-        image: "/team/harsh.jpg",
-        description: "Driving community initiatives and workshops. Researching offensive security, malware analysis, and LLM hacking.",
-        linkedin: "https://www.linkedin.com/in/harsh-kanojia369/"
     },
     {
         name: "Himanshi Shrivastava",

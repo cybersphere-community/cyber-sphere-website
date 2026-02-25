@@ -33,8 +33,8 @@ const Home = () => {
                             </div>
 
                             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold font-orbitron tracking-tight leading-none flex flex-col items-start gap-0">
-                                <span className="text-red-600 drop-shadow-sm">CYBER</span>
-                                <span className="text-slate-900 drop-shadow-sm transition-colors duration-300">SPHERE</span>
+                                <span className="hero-cyber-text" data-text="CYBER">CYBER</span>
+                                <span className="hero-sphere-text" data-text="SPHERE">SPHERE</span>
                                 <span className="text-[10px] sm:text-sm md:text-lg text-slate-500 font-sans font-bold tracking-[0.3em] sm:tracking-[0.5em] uppercase mt-2 sm:mt-4 border-t border-slate-200 pt-2 sm:pt-4 w-full text-center">Security Starts With Us</span>
                             </h1>
 

@@ -64,10 +64,10 @@ const Team = () => {
             />
 
             <div className="text-center mb-20">
-                <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-brand-primary tracking-tight dark:text-white">
+                <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-brand-primary tracking-tight">
                     Meet the Team
                 </h1>
-                <p className="text-slate-500 max-w-2xl mx-auto text-lg dark:text-slate-400">
+                <p className="text-slate-500 max-w-2xl mx-auto text-lg">
                     The passionate individuals driving the Cyber Sphere mission forward.
                 </p>
             </div>
@@ -80,7 +80,7 @@ const Team = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 hover:border-blue-100 transition-all duration-300 flex flex-col sm:flex-row items-center sm:items-start gap-8 group dark:bg-white/10 backdrop-blur-md dark:border-white/10"
+                        className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 hover:border-blue-100 transition-all duration-300 flex flex-col sm:flex-row items-center sm:items-start gap-8 group backdrop-blur-md"
                     >
                         {/* Circular Image */}
                         <div className="flex-shrink-0 relative">
@@ -98,7 +98,7 @@ const Team = () => {
 
                         {/* Content */}
                         <div className="flex-1 text-center sm:text-left w-full">
-                            <h3 className="text-2xl font-bold text-brand-primary mb-1 group-hover:text-brand-accent transition-colors dark:text-white">
+                            <h3 className="text-2xl font-bold text-brand-primary mb-1 group-hover:text-brand-accent transition-colors">
                                 {member.name}
                             </h3>
                             <p className="text-brand-secondary font-medium mb-1 text-sm uppercase tracking-wide">{member.role}</p>

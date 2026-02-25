@@ -11,8 +11,8 @@ const CallForSpeakersPage = () => {
             />
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-12">
-                    <h1 className="text-4xl sm:text-5xl font-bold text-brand-primary mb-6 tracking-tight dark:text-white">Speak at Cyber Sphere</h1>
-                    <p className="text-slate-500 text-lg mb-8 leading-relaxed max-w-2xl mx-auto dark:text-slate-400">
+                    <h1 className="text-4xl sm:text-5xl font-bold text-brand-primary mb-6 tracking-tight">Speak at Cyber Sphere</h1>
+                    <p className="text-slate-500 text-lg mb-8 leading-relaxed max-w-2xl mx-auto">
                         Share your expertise, research, and passion with a community of security enthusiasts.
                     </p>
                 </div>

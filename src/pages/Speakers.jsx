@@ -44,15 +44,15 @@ const Speakers = () => {
                     keywords="cybersecurity speakers, experts, researchers, industry professionals"
                 />
                 <div className="text-center mb-20">
-                    <h1 className="text-4xl sm:text-5xl font-bold text-brand-primary mb-6 tracking-tight dark:text-white">Our Speakers</h1>
-                    <p className="text-slate-500 max-w-2xl mx-auto text-lg dark:text-slate-400">
+                    <h1 className="text-4xl sm:text-5xl font-bold text-brand-primary mb-6 tracking-tight">Our Speakers</h1>
+                    <p className="text-slate-500 max-w-2xl mx-auto text-lg">
                         Meet the industry experts and researchers leading the conversation.
                     </p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
                     {speakers.map((speaker, index) => (
-                        <div key={index} className="bg-white rounded-2xl overflow-hidden text-center p-8 shadow-sm border border-slate-200 transition-all duration-300 group flex flex-col h-full dark:bg-white/5 backdrop-blur-md dark:border-white/10">
+                        <div key={index} className="bg-white rounded-2xl overflow-hidden text-center p-8 shadow-sm border border-slate-200 transition-all duration-300 group flex flex-col h-full backdrop-blur-md">
                             <div className="w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center p-1 border-2 border-slate-100 group-hover:border-brand-accent transition-colors">
                                 <img
                                     src={speaker.image}
@@ -60,9 +60,9 @@ const Speakers = () => {
                                     className="w-full h-full rounded-full object-cover"
                                 />
                             </div>
-                            <h3 className="text-xl font-bold text-brand-primary mb-2 dark:text-white">{speaker.name}</h3>
+                            <h3 className="text-xl font-bold text-brand-primary mb-2">{speaker.name}</h3>
                             <p className="text-brand-accent font-bold text-xs uppercase tracking-wide mb-4">{speaker.role}</p>
-                            <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-grow dark:text-slate-400">{speaker.description}</p>
+                            <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-grow">{speaker.description}</p>
 
                             {speaker.linkedin && (
                                 <a

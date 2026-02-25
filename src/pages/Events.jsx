@@ -58,7 +58,7 @@ const Events = () => {
                 <section className="mb-20">
                     <div className="flex items-center mb-10 gap-4">
                         <div className="h-10 w-1.5 bg-brand-accent rounded-full"></div>
-                        <h1 className="text-3xl sm:text-5xl font-bold text-brand-primary tracking-tight dark:text-white">Upcoming Events</h1>
+                        <h1 className="text-3xl sm:text-5xl font-bold text-brand-primary tracking-tight">Upcoming Events</h1>
                     </div>
 
                     <div className="grid gap-8">
@@ -69,20 +69,20 @@ const Events = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="group bg-white rounded-2xl p-8 shadow-sm border border-slate-200 transition-all duration-300 dark:bg-white/5 backdrop-blur-md dark:border-white/10"
+                                className="group bg-white rounded-2xl p-8 shadow-sm border border-slate-200 transition-all duration-300 backdrop-blur-md"
                             >
                                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
                                     <div className="flex-1">
                                         <span className="inline-block px-4 py-1.5 bg-blue-50 text-brand-accent text-sm font-bold rounded-full mb-5 border border-blue-100">
                                             {event.type}
                                         </span>
-                                        <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-brand-primary group-hover:text-brand-accent transition-colors dark:text-white">
+                                        <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-brand-primary group-hover:text-brand-accent transition-colors">
                                             {event.title}
                                         </h2>
-                                        <p className="text-slate-500 mb-6 max-w-2xl leading-relaxed text-lg dark:text-slate-400">
+                                        <p className="text-slate-500 mb-6 max-w-2xl leading-relaxed text-lg">
                                             {event.description}
                                         </p>
-                                        <div className="flex flex-wrap gap-6 text-sm font-medium text-slate-500 dark:text-slate-400">
+                                        <div className="flex flex-wrap gap-6 text-sm font-medium text-slate-500">
                                             <div className="flex items-center gap-2">
                                                 <Calendar className="h-5 w-5 text-brand-accent" />
                                                 {event.date}
@@ -123,25 +123,25 @@ const Events = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm flex flex-col h-full transition-shadow dark:bg-white/5 backdrop-blur-md dark:border-white/10"
+                                className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm flex flex-col h-full transition-shadow backdrop-blur-md"
                             >
                                 <div className="flex justify-between items-start mb-6">
                                     <span className="text-xs font-bold text-brand-accent uppercase tracking-wider bg-blue-50 px-3 py-1 rounded-full">{event.type}</span>
                                     <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">{event.date}</span>
                                 </div>
-                                <h3 className="text-2xl font-bold mb-3 text-brand-primary leading-tight dark:text-white">
+                                <h3 className="text-2xl font-bold mb-3 text-brand-primary leading-tight">
                                     {event.title}
                                 </h3>
-                                <p className="text-slate-500 text-sm mb-6 leading-relaxed flex-grow dark:text-slate-400">
+                                <p className="text-slate-500 text-sm mb-6 leading-relaxed flex-grow">
                                     {event.description}
                                 </p>
 
                                 <div className="pt-6 border-t border-slate-100 mt-auto">
-                                    <div className="flex flex-wrap gap-y-4 gap-x-8 text-xs text-slate-500 font-bold uppercase tracking-wider mb-6 dark:text-slate-400">
+                                    <div className="flex flex-wrap gap-y-4 gap-x-8 text-xs text-slate-500 font-bold uppercase tracking-wider mb-6">
                                         {event.speaker && (
                                             <div className="flex items-center gap-3">
                                                 {event.speakerImage && (
-                                                    <img src={event.speakerImage} alt={event.speaker} className="w-8 h-8 rounded-full object-cover border border-slate-200 dark:border-white/10" />
+                                                    <img src={event.speakerImage} alt={event.speaker} className="w-8 h-8 rounded-full object-cover border border-slate-200" />
                                                 )}
                                                 <div>
                                                     <span className="block text-slate-400 mb-0.5 text-[10px]">Speaker</span>
@@ -152,7 +152,7 @@ const Events = () => {
                                         {event.organizer && (
                                             <div className="flex items-center gap-3">
                                                 {event.organizerImage && (
-                                                    <img src={event.organizerImage} alt={event.organizer} className="w-8 h-8 rounded-full object-cover border border-slate-200 dark:border-white/10" />
+                                                    <img src={event.organizerImage} alt={event.organizer} className="w-8 h-8 rounded-full object-cover border border-slate-200" />
                                                 )}
                                                 <div>
                                                     <span className="block text-slate-400 mb-0.5 text-[10px]">Organizer</span>
@@ -164,7 +164,7 @@ const Events = () => {
                                     {event.blogContent && (
                                         <button
                                             onClick={() => setSelectedEvent(event)}
-                                            className="w-full py-3 bg-slate-50 hover:bg-slate-100 text-brand-primary rounded-xl transition-colors text-sm font-bold flex items-center justify-center gap-2 group border border-slate-200 dark:bg-white/10 backdrop-blur-md dark:border-white/10 dark:text-white"
+                                            className="w-full py-3 bg-slate-50 hover:bg-slate-100 text-brand-primary rounded-xl transition-colors text-sm font-bold flex items-center justify-center gap-2 group border border-slate-200 backdrop-blur-md"
                                         >
                                             Read Recap <ArrowRight className="w-4 h-4 transition-transform text-brand-accent" />
                                         </button>
@@ -178,13 +178,13 @@ const Events = () => {
 
             {/* Full Screen Event Recap Modal */}
             {selectedEvent && createPortal(
-                <div className="fixed inset-0 z-[100] bg-white dark:bg-slate-950 overflow-y-auto animate-in fade-in duration-300">
+                <div className="fixed inset-0 z-[100] bg-white overflow-y-auto animate-in fade-in duration-300">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
                         {/* Header Navigation */}
                         <div className="flex justify-between items-center mb-12">
                             <button
                                 onClick={() => setSelectedEvent(null)}
-                                className="inline-flex items-center gap-2 text-slate-500 hover:text-brand-accent font-bold transition-colors group dark:text-slate-400"
+                                className="inline-flex items-center gap-2 text-slate-500 hover:text-brand-accent font-bold transition-colors group"
                             >
                                 <div className="p-2 rounded-full bg-slate-100 group-hover:bg-blue-50 transition-colors">
                                     <ArrowLeft className="w-5 h-5 transition-transform" />
@@ -206,7 +206,7 @@ const Events = () => {
                                 <div className="space-y-8">
                                     {/* Speaker Card */}
                                     {selectedEvent.speaker && (
-                                        <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center dark:bg-white/10 backdrop-blur-md">
+                                        <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center backdrop-blur-md">
                                             <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-4 border-white shadow-sm">
                                                 {selectedEvent.speakerImage ? (
                                                     <img src={selectedEvent.speakerImage} alt={selectedEvent.speaker} className="w-full h-full object-cover" />
@@ -216,7 +216,7 @@ const Events = () => {
                                                     </div>
                                                 )}
                                             </div>
-                                            <h4 className="text-brand-primary font-bold text-lg mb-1 dark:text-white">{selectedEvent.speaker}</h4>
+                                            <h4 className="text-brand-primary font-bold text-lg mb-1">{selectedEvent.speaker}</h4>
                                             <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-3">Speaker</p>
                                             {selectedEvent.speakerUrl && (
                                                 <a href={selectedEvent.speakerUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-brand-accent hover:text-blue-700 font-medium transition-colors">
@@ -228,7 +228,7 @@ const Events = () => {
 
                                     {/* Organizer Card */}
                                     {selectedEvent.organizer && (
-                                        <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center dark:bg-white/10 backdrop-blur-md">
+                                        <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center backdrop-blur-md">
                                             <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-4 border-white shadow-sm">
                                                 {selectedEvent.organizerImage ? (
                                                     <img src={selectedEvent.organizerImage} alt={selectedEvent.organizer} className="w-full h-full object-cover" />
@@ -238,7 +238,7 @@ const Events = () => {
                                                     </div>
                                                 )}
                                             </div>
-                                            <h4 className="text-brand-primary font-bold text-lg mb-1 dark:text-white">{selectedEvent.organizer}</h4>
+                                            <h4 className="text-brand-primary font-bold text-lg mb-1">{selectedEvent.organizer}</h4>
                                             <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-3">Organizer</p>
                                             {selectedEvent.organizerUrl && (
                                                 <a href={selectedEvent.organizerUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-brand-accent hover:text-blue-700 font-medium transition-colors">
@@ -257,10 +257,10 @@ const Events = () => {
                                     <span className="inline-block px-4 py-1.5 bg-blue-50 text-brand-accent text-sm font-bold rounded-full mb-6 border border-blue-100">
                                         {selectedEvent.type} RECAP
                                     </span>
-                                    <h1 className="text-4xl md:text-5xl font-bold text-brand-primary mb-6 leading-tight dark:text-white">
+                                    <h1 className="text-4xl md:text-5xl font-bold text-brand-primary mb-6 leading-tight">
                                         {selectedEvent.title}
                                     </h1>
-                                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 text-slate-500 font-medium border-b border-slate-100 pb-8 dark:text-slate-400 dark:border-white/10">
+                                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 text-slate-500 font-medium border-b border-slate-100 pb-8">
                                         <span className="flex items-center gap-2">
                                             <Calendar className="w-5 h-5 text-brand-accent" /> {selectedEvent.date}
                                         </span>
@@ -277,18 +277,18 @@ const Events = () => {
                                     </div>
                                 </div>
 
-                                <div className="prose prose-lg prose-slate max-w-none leading-relaxed text-slate-600 dark:text-slate-300">
+                                <div className="prose prose-lg prose-slate max-w-none leading-relaxed text-slate-600">
                                     {selectedEvent.blogContent?.split('\n').map((paragraph, idx) => {
                                         const trimmed = paragraph.trim();
                                         if (!trimmed) return null;
                                         if (trimmed.startsWith('###')) {
-                                            return <h3 key={idx} className="text-2xl font-bold text-brand-primary mt-10 mb-4 dark:text-white">{trimmed.replace('###', '').trim()}</h3>;
+                                            return <h3 key={idx} className="text-2xl font-bold text-brand-primary mt-10 mb-4">{trimmed.replace('###', '').trim()}</h3>;
                                         }
                                         if (trimmed.startsWith('-')) {
                                             return <li key={idx} className="ml-4 list-disc marker:text-brand-accent pl-2 mb-2">{trimmed.replace('-', '').trim()}</li>
                                         }
                                         if (trimmed.startsWith('**')) {
-                                            return <p key={idx} className="font-bold text-brand-primary mb-4 dark:text-white">{trimmed.replace(/\*\*/g, '')}</p>;
+                                            return <p key={idx} className="font-bold text-brand-primary mb-4">{trimmed.replace(/\*\*/g, '')}</p>;
                                         }
                                         return <p key={idx} className="mb-4">{trimmed}</p>;
                                     })}

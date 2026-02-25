@@ -49,7 +49,7 @@ const CallForSpeakers = () => {
     };
 
     return (
-        <div className="bg-white rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 p-8 sm:p-12 mt-20">
+        <div className="bg-white rounded-2xl border border-slate-100 p-8 sm:p-12 mt-20">
             <div className="flex flex-col md:flex-row gap-12 items-start">
                 <div className="flex-1">
                     <div className="inline-flex items-center gap-3 px-4 py-2 bg-blue-50 rounded-full text-brand-accent font-bold text-sm mb-6">

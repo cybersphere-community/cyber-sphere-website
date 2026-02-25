@@ -118,10 +118,10 @@ const Articles = () => {
             />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-brand-primary tracking-tight dark:text-white">
+                    <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-brand-primary tracking-tight">
                         Cyber Insights
                     </h1>
-                    <p className="text-slate-500 max-w-2xl mx-auto text-lg leading-relaxed mb-8 dark:text-slate-400">
+                    <p className="text-slate-500 max-w-2xl mx-auto text-lg leading-relaxed mb-8">
                         Deep dives into cybersecurity, cloud defense, and threat evasion.
                         Aggregation of articles from Dev.to and Medium.
                     </p>
@@ -137,7 +137,7 @@ const Articles = () => {
                     <input
                         type="text"
                         placeholder="Search articles..."
-                        className="w-full bg-white border border-slate-200 rounded-2xl py-4 pl-14 pr-6 focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent text-slate-900 placeholder-slate-400 shadow-sm transition-all dark:bg-white/5 backdrop-blur-md dark:border-white/10"
+                        className="w-full bg-white border border-slate-200 rounded-2xl py-4 pl-14 pr-6 focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent text-slate-900 placeholder-slate-400 shadow-sm transition-all backdrop-blur-md"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
@@ -152,7 +152,7 @@ const Articles = () => {
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {filteredBlogs.map((post) => (
-                            <article key={post.id} className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 transition-all duration-300 flex flex-col h-full dark:bg-white/5 backdrop-blur-md dark:border-white/10">
+                            <article key={post.id} className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 transition-all duration-300 flex flex-col h-full backdrop-blur-md">
                                 <a href={post.url} target="_blank" rel="noopener noreferrer" className="flex flex-col h-full">
                                     <div className="relative h-52 overflow-hidden">
                                         <img
@@ -161,23 +161,23 @@ const Articles = () => {
                                             loading="lazy"
                                             className="w-full h-full object-cover transition-transform duration-700"
                                         />
-                                        <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-brand-primary text-xs font-bold px-3 py-1.5 rounded-lg border border-slate-100 shadow-sm dark:text-white">
+                                        <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-brand-primary text-xs font-bold px-3 py-1.5 rounded-lg border border-slate-100 shadow-sm">
                                             {post.source}
                                         </div>
                                     </div>
                                     <div className="p-6 flex flex-col flex-grow">
-                                        <div className="flex items-center text-slate-500 text-sm font-medium mb-3 gap-2 dark:text-slate-400">
+                                        <div className="flex items-center text-slate-500 text-sm font-medium mb-3 gap-2">
                                             <Calendar className="h-4 w-4 text-brand-accent" />
                                             {post.date.toLocaleDateString()}
                                         </div>
-                                        <h3 className="text-xl font-bold text-brand-primary mb-3 line-clamp-2 group-hover:text-brand-accent transition-colors dark:text-white">
+                                        <h3 className="text-xl font-bold text-brand-primary mb-3 line-clamp-2 group-hover:text-brand-accent transition-colors">
                                             {post.title}
                                         </h3>
-                                        <p className="text-slate-500 text-sm mb-6 line-clamp-3 leading-relaxed flex-grow dark:text-slate-400">
+                                        <p className="text-slate-500 text-sm mb-6 line-clamp-3 leading-relaxed flex-grow">
                                             {post.description}
                                         </p>
                                         <div className="flex items-center justify-between pt-5 border-t border-slate-100 mt-auto">
-                                            <span className="text-xs text-slate-500 font-bold flex items-center gap-2 dark:text-slate-400">
+                                            <span className="text-xs text-slate-500 font-bold flex items-center gap-2">
                                                 <User className="h-3.5 w-3.5" /> {post.author}
                                             </span>
                                             <span className="text-brand-accent text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">

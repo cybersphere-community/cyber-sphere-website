@@ -6,8 +6,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #0f172a;
-    /* Matching the brand-primary background */
+    background-color: #ffffff;
+    /* White background */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,8 +31,8 @@
     content: "";
     height: 100%;
     width: 100%;
-    border: 2px solid white;
-    /* Changed to white for dark background */
+    border: 2px solid #0f172a;
+    /* Dark border for white background */
     border-radius: 50%;
     position: absolute;
     animation: doitreverse 4s infinite;
@@ -42,8 +42,8 @@
     content: "";
     height: 100%;
     width: 100%;
-    border: 2px solid white;
-    /* Changed to white for dark background */
+    border: 2px solid #0f172a;
+    /* Dark border for white background */
     border-radius: 50%;
     position: absolute;
     animation: doit 4s infinite;
@@ -83,8 +83,8 @@
     height: 50%;
     width: 50%;
     border-radius: 50%;
-    border: 1px solid white;
-    /* Changed to white */
+    border: 1px solid #0f172a;
+    /* Dark border */
     background-color: rgb(85, 0, 128);
     position: absolute;
     left: 25%;

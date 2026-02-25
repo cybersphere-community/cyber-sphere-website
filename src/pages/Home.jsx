@@ -34,13 +34,13 @@ const Home = () => {
 
                             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold font-orbitron tracking-tight leading-none flex flex-col items-start gap-0">
                                 <span className="text-red-600 drop-shadow-sm">CYBER</span>
-                                <span className="text-slate-900 dark:text-white drop-shadow-sm transition-colors duration-300">SPHERE</span>
-                                <span className="text-[10px] sm:text-sm md:text-lg text-slate-500 dark:text-slate-400 font-sans font-bold tracking-[0.3em] sm:tracking-[0.5em] uppercase mt-2 sm:mt-4 border-t border-slate-200 dark:border-white/10 pt-2 sm:pt-4 w-full text-center">Security Starts With Us</span>
+                                <span className="text-slate-900 drop-shadow-sm transition-colors duration-300">SPHERE</span>
+                                <span className="text-[10px] sm:text-sm md:text-lg text-slate-500 font-sans font-bold tracking-[0.3em] sm:tracking-[0.5em] uppercase mt-2 sm:mt-4 border-t border-slate-200 pt-2 sm:pt-4 w-full text-center">Security Starts With Us</span>
                             </h1>
 
-                            <p className="text-xl text-slate-600 dark:text-slate-300 max-w-lg leading-relaxed">
+                            <p className="text-xl text-slate-600 max-w-lg leading-relaxed">
                                 An open collective for hackers, researchers, and defenders.
-                                <span className="font-semibold text-slate-800 dark:text-white"> No corporate agenda.</span> Just pure security research and knowledge sharing.
+                                <span className="font-semibold text-slate-800"> No corporate agenda.</span> Just pure security research and knowledge sharing.
                             </p>
 
                             <div className="flex flex-wrap gap-4 pt-4">
@@ -48,7 +48,7 @@ const Home = () => {
                                     href="https://forms.gle/xsLyYgHzMiYsp8zx6"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="btn-primary shadow-xl shadow-blue-500/20 dark:shadow-blue-500/10 text-lg px-8 py-4"
+                                    className="btn-primary shadow-xl shadow-blue-500/20 text-lg px-8 py-4"
                                 >
                                     Join Community <Users className="w-5 h-5" />
                                 </a>
@@ -62,21 +62,21 @@ const Home = () => {
                                 <div className="absolute inset-0 bg-blue-100 rounded-full blur-3xl opacity-30 animate-pulse"></div>
 
                                 {/* Outer Ring - Orbiting */}
-                                <div className="absolute inset-0 rounded-full border border-slate-200 animate-[spin_20s_linear_infinite] dark:border-white/10">
-                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-2 rounded-xl shadow-lg border border-slate-100 dark:bg-white/5 backdrop-blur-md">
+                                <div className="absolute inset-0 rounded-full border border-slate-200 animate-[spin_20s_linear_infinite]">
+                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-2 rounded-xl shadow-lg border border-slate-100 backdrop-blur-md">
                                         <Shield className="w-5 h-5 text-brand-accent" />
                                     </div>
-                                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-white p-2 rounded-xl shadow-lg border border-slate-100 dark:bg-white/5 backdrop-blur-md">
+                                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-white p-2 rounded-xl shadow-lg border border-slate-100 backdrop-blur-md">
                                         <Globe className="w-5 h-5 text-indigo-500" />
                                     </div>
                                 </div>
 
                                 {/* Inner Ring - Orbiting Reverse */}
-                                <div className="absolute inset-12 sm:inset-16 rounded-full border border-slate-200 animate-[spin_15s_linear_infinite_reverse] dark:border-white/10">
-                                    <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 bg-white p-2 rounded-xl shadow-lg border border-slate-100 dark:bg-white/5 backdrop-blur-md">
+                                <div className="absolute inset-12 sm:inset-16 rounded-full border border-slate-200 animate-[spin_15s_linear_infinite_reverse]">
+                                    <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 bg-white p-2 rounded-xl shadow-lg border border-slate-100 backdrop-blur-md">
                                         <Terminal className="w-4 h-4 text-slate-700" />
                                     </div>
-                                    <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 bg-white p-2 rounded-xl shadow-lg border border-slate-100 dark:bg-white/5 backdrop-blur-md">
+                                    <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 bg-white p-2 rounded-xl shadow-lg border border-slate-100 backdrop-blur-md">
                                         <Code className="w-4 h-4 text-pink-500" />
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@ const Home = () => {
             </section>
 
             {/* Stats Bar - Minimalist */}
-            <div className="border-y border-slate-200/50 dark:border-white/10 bg-white dark:bg-white/5 backdrop-blur-md">
+            <div className="border-y border-slate-200/50 bg-white backdrop-blur-md">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-100">
                         {[
@@ -116,10 +116,10 @@ const Home = () => {
                                 transition={{ duration: 0.4, delay: i * 0.05 }}
                                 className="py-8 text-center group cursor-default"
                             >
-                                <div className="text-3xl font-bold text-brand-primary mb-1 transition-transform dark:text-white">
+                                <div className="text-3xl font-bold text-brand-primary mb-1 transition-transform">
                                     {stat.value}
                                 </div>
-                                <div className="text-xs text-slate-500 font-bold tracking-widest dark:text-slate-400">{stat.label}</div>
+                                <div className="text-xs text-slate-500 font-bold tracking-widest">{stat.label}</div>
                             </motion.div>
                         ))}
                     </div>
@@ -127,13 +127,13 @@ const Home = () => {
             </div>
 
             {/* Mission Section - Clean Cards */}
-            <section className="py-24 bg-brand-light dark:bg-white/5 backdrop-blur-md relative">
+            <section className="py-24 bg-brand-light backdrop-blur-md relative">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="text-center mb-20">
-                        <h2 className="text-3xl sm:text-4xl font-bold text-brand-primary mb-4 dark:text-white">
+                        <h2 className="text-3xl sm:text-4xl font-bold text-brand-primary mb-4">
                             Our Mission
                         </h2>
-                        <p className="text-slate-500 max-w-2xl mx-auto dark:text-slate-400">
+                        <p className="text-slate-500 max-w-2xl mx-auto">
                             Empowering the next generation of defenders through open collaboration.
                         </p>
                     </div>
@@ -150,13 +150,13 @@ const Home = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                                className={`bg-white dark:bg-white/5 backdrop-blur-md rounded-2xl border border-slate-200 dark:border-white/10 group p-8 ${i === 1 ? 'md:-mt-8' : ''}`}
+                                className={`bg-white backdrop-blur-md rounded-2xl border border-slate-200 group p-8 ${i === 1 ? 'md:-mt-8' : ''}`}
                             >
-                                <div className="w-14 h-14 bg-blue-50 dark:bg-white/5 backdrop-blur-md rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-accent transition-colors duration-300">
+                                <div className="w-14 h-14 bg-blue-50 backdrop-blur-md rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-accent transition-colors duration-300">
                                     <item.icon className="w-7 h-7 text-brand-accent group-hover:text-white transition-colors duration-300" />
                                 </div>
-                                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{item.title}</h3>
-                                <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+                                <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
+                                <p className="text-slate-600 leading-relaxed text-sm">
                                     {item.desc}
                                 </p>
                             </motion.div>
@@ -166,7 +166,7 @@ const Home = () => {
             </section>
 
             {/* Security Quotes */}
-            <div className="py-12 bg-white dark:bg-white/5 backdrop-blur-md relative z-10">
+            <div className="py-12 bg-white backdrop-blur-md relative z-10">
                 <SecurityQuotes />
             </div>
 
@@ -178,7 +178,7 @@ const Home = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true, margin: "-50px" }}
                         transition={{ duration: 0.6 }}
-                        className="bg-white dark:bg-white/5 backdrop-blur-md rounded-2xl border border-slate-200 dark:border-white/10 overflow-hidden flex flex-col lg:flex-row p-0"
+                        className="bg-white backdrop-blur-md rounded-2xl border border-slate-200 overflow-hidden flex flex-col lg:flex-row p-0"
                     >
                         <div className="p-10 sm:p-14 lg:w-1/2 flex flex-col justify-center">
                             <div className="inline-flex items-center gap-2 mb-8">
@@ -186,21 +186,21 @@ const Home = () => {
                                 <span className="text-brand-accent font-bold text-sm tracking-widest uppercase">Next Gathering</span>
                             </div>
 
-                            <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
+                            <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6 leading-tight">
                                 {featuredEvent ? featuredEvent.title : "Upcoming Event"}
                             </h3>
-                            <p className="text-slate-600 dark:text-slate-400 mb-10 text-lg">
+                            <p className="text-slate-600 mb-10 text-lg">
                                 {featuredEvent ? featuredEvent.description : "Stay tuned for updates."}
                             </p>
 
-                            <div className="grid grid-cols-2 gap-8 mb-10 border-t border-slate-200 dark:border-white/10 pt-8">
+                            <div className="grid grid-cols-2 gap-8 mb-10 border-t border-slate-200 pt-8">
                                 <div>
-                                    <span className="block text-slate-500 dark:text-slate-500 text-xs font-bold tracking-wider mb-2">DATE</span>
-                                    <span className="text-slate-900 dark:text-white font-semibold text-lg">{featuredEvent ? featuredEvent.date : "TBA"}</span>
+                                    <span className="block text-slate-500 text-xs font-bold tracking-wider mb-2">DATE</span>
+                                    <span className="text-slate-900 font-semibold text-lg">{featuredEvent ? featuredEvent.date : "TBA"}</span>
                                 </div>
                                 <div>
-                                    <span className="block text-slate-500 dark:text-slate-500 text-xs font-bold tracking-wider mb-2">TIME</span>
-                                    <span className="text-slate-900 dark:text-white font-semibold text-lg">{featuredEvent ? featuredEvent.time : "TBA"}</span>
+                                    <span className="block text-slate-500 text-xs font-bold tracking-wider mb-2">TIME</span>
+                                    <span className="text-slate-900 font-semibold text-lg">{featuredEvent ? featuredEvent.time : "TBA"}</span>
                                 </div>
                             </div>
 
@@ -209,7 +209,7 @@ const Home = () => {
                             </Link>
                         </div>
 
-                        <div className="lg:w-1/2 bg-slate-100 dark:bg-white/5 backdrop-blur-md relative min-h-[300px]">
+                        <div className="lg:w-1/2 bg-slate-100 backdrop-blur-md relative min-h-[300px]">
                             <img
                                 src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000"
                                 alt="Event"
@@ -226,7 +226,7 @@ const Home = () => {
             </div>
 
             {/* Blog Section */}
-            <div className="bg-white dark:bg-white/5 backdrop-blur-md relative z-10">
+            <div className="bg-white backdrop-blur-md relative z-10">
                 <BlogSection />
             </div>
 

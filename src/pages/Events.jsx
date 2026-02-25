@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Calendar, MapPin, Clock, ArrowLeft, ArrowRight, Linkedin, Download } from 'lucide-react';
+import { Calendar, MapPin, Clock, ArrowRight, Linkedin } from 'lucide-react';
 import SEO from '../components/SEO';
 import { upcomingEvents, pastEvents } from '../data/events';
 
@@ -180,14 +179,20 @@ const Events = () => {
             {selectedEvent && createPortal(
                 <div className="fixed inset-0 z-[100] bg-white overflow-y-auto animate-in fade-in duration-300">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-                        {/* Header Navigation */}
                         <div className="flex justify-between items-center mb-12">
                             <button
                                 onClick={() => setSelectedEvent(null)}
-                                className="inline-flex items-center gap-2 text-slate-500 hover:text-brand-accent font-bold transition-colors group"
+                                className="inline-flex items-center gap-3 text-slate-500 hover:text-brand-accent font-bold transition-colors group"
                             >
-                                <div className="p-2 rounded-full bg-slate-100 group-hover:bg-blue-50 transition-colors">
-                                    <ArrowLeft className="w-5 h-5 transition-transform" />
+                                <div className="back-btn">
+                                    <div className="back-btn-box">
+                                        <svg className="back-btn-elem" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2.83 5H6a7 7 0 1 1-1.193 13.897l.471-1.938a5 5 0 1 0 .744-9.959H2.83l2.302 2.302L3.72 10.716 0 7l3.719-3.714L5.131 4.7 2.83 5Z" />
+                                        </svg>
+                                        <svg className="back-btn-elem" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2.83 5H6a7 7 0 1 1-1.193 13.897l.471-1.938a5 5 0 1 0 .744-9.959H2.83l2.302 2.302L3.72 10.716 0 7l3.719-3.714L5.131 4.7 2.83 5Z" />
+                                        </svg>
+                                    </div>
                                 </div>
                                 Back to Events
                             </button>

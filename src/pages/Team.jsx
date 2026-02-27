@@ -39,6 +39,7 @@ const teamMembers = [
         role: "Master of Cyber Security",
         university: "Deakin University",
         image: "/team/brijesh.jpg",
+        portfolio: "https://brijesh.janaktravels.com/",
         linkedin: "https://www.linkedin.com/in/brijesh-palta/",
         objectPosition: "object-top",
         interests: ["Cloud Security", "Secure Infra Development", "DevSecOps"]

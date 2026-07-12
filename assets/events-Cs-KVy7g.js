@@ -1,4 +1,25 @@
-const e=[],t=[{id:109,title:"Defensive Cybersecurity: Detect, Analyze, & Respond",date:"Jun 06, 2026",type:"Workshop",description:"Step into the world of Defensive Cybersecurity and discover how modern Blue Teams protect organizations from cyber threats. Learn threat detection, social engineering, incident response, and watch a live malware analysis demo.",speaker:"Lavanya Goyal",speakerUrl:"https://www.linkedin.com/in/lavanya-goyal/",speakerImage:"/team/lavanya.png",organizer:"Harsh Kanojia",organizerUrl:"https://www.linkedin.com/in/harsh-kanojia369/",organizerImage:"/team/harsh.jpg",eventPoster:"https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&q=80&w=1000",presentationLink:"https://www.canva.com/design/DAHLYl4vvP8/ODz_oPJMbWcMN1mliLWdTg/view?utlId=hce00a6acc3#2",blogContent:`
+const e=[],t=[{id:110,title:"Master Class on Cyber Business Analysis",date:"Jul 11, 2026",type:"Master Class",description:"Master Class on Cyber Business Analysis focusing on bridging the gap between technical security and business strategy, risk assessment, and data-driven security decision-making.",speaker:"Manish Garg",speakerUrl:"https://www.linkedin.com/in/manish-garg-51b072228/",speakerImage:"/team/manish.jpg",organizer:"Harsh Kanojia",organizerUrl:"https://www.linkedin.com/in/harsh-kanojia369/",organizerImage:"/team/harsh.jpg",eventPoster:"https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000",presentationLink:"https://drive.google.com/file/d/1FxkiUwe0eKf5KYv1lqbKaCto0YZyBddr/view?usp=sharing",blogContent:`
+### Context
+We recently hosted a Master Class on Cyber Business Analysis within the Cyber Sphere Community. Led by Manish Garg, a Business Analytics specialist, the session explored the vital intersection of cybersecurity, business operations, and risk management.
+
+### Workshop Objective
+The session was designed to equip participants with the skills needed to align security initiatives with organizational goals:
+- Understand the role of a Cyber Business Analyst
+- Learn how to perform cyber risk assessments and translate technical vulnerabilities into business impact
+- Master data-driven security decision-making and reporting
+- Explore frameworks for aligning cybersecurity with corporate governance and compliance
+
+### Bridging Security and Business Strategy
+Manish discussed how cybersecurity is no longer just a technical issue, but a critical business driver. Attendees learned how to bridge the communication gap between technical security teams and business executives by focusing on cost-benefit analysis, risk mitigation, and strategic alignment.
+
+### Risk Assessment & Decision Making
+The workshop covered methodologies for identifying, analyzing, and prioritizing cyber risks. Manish demonstrated how to use business intelligence tools and data analytics to assess security postures, quantify potential losses, and make informed, data-driven security investments.
+
+### Key Takeaways
+- Effective cyber business analysis requires understanding both technical threat landscapes and organizational business models.
+- Translating cyber risks into financial and operational terms helps secure executive buy-in and budget for security programs.
+- Aligning security strategies with business objectives ensures resilience and sustainable growth in modern enterprises.
+        `},{id:109,title:"Defensive Cybersecurity: Detect, Analyze, & Respond",date:"Jun 06, 2026",type:"Workshop",description:"Step into the world of Defensive Cybersecurity and discover how modern Blue Teams protect organizations from cyber threats. Learn threat detection, social engineering, incident response, and watch a live malware analysis demo.",speaker:"Lavanya Goyal",speakerUrl:"https://www.linkedin.com/in/lavanya-goyal/",speakerImage:"/team/lavanya.png",organizer:"Harsh Kanojia",organizerUrl:"https://www.linkedin.com/in/harsh-kanojia369/",organizerImage:"/team/harsh.jpg",eventPoster:"https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&q=80&w=1000",presentationLink:"https://www.canva.com/design/DAHLYl4vvP8/ODz_oPJMbWcMN1mliLWdTg/view?utlId=hce00a6acc3#2",blogContent:`
 ### Context
 We recently hosted an engaging workshop on Defensive Cybersecurity, focusing on the essential techniques, tools, and methodologies that modern Blue Teams use to protect organizations. Led by Lavanya Goyal, an Associate Security Engineer, the session provided attendees with a practical understanding of threat detection, defensive operations, and incident response.
 

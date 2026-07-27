@@ -2,8 +2,6 @@ import { Mail, User, MessageSquare, Send, Linkedin, Youtube } from 'lucide-react
 import SEO from '../components/SEO';
 import ScrollReveal from '../components/ScrollReveal';
 
-
-
 const Contact = () => {
     return (
         <div className="relative min-h-screen bg-transparent pt-24 pb-12 sm:pt-32 sm:pb-20 px-4 sm:px-6 lg:px-8 font-sans overflow-hidden">
@@ -13,88 +11,75 @@ const Contact = () => {
                 keywords="contact cybersecurity community, join hacker community, security collaboration, ethical hacking mentorship, infosec community india"
             />
 
-            {/* Background Decorations */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full overflow-hidden pointer-events-none z-0">
-                <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl mix-blend-multiply animate-pulse"></div>
-                <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl mix-blend-multiply animate-pulse" style={{ animationDelay: '1s' }}></div>
-            </div>
-
             <div className="relative z-10 max-w-7xl mx-auto">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+                {/* Centered Page Header */}
+                <ScrollReveal className="text-center mb-16">
+                    <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 text-slate-900 tracking-tight uppercase font-orbitron">
+                        CONTACT <span className="text-red-600">US</span>
+                    </h1>
+                    <p className="text-slate-500 max-w-2xl mx-auto text-sm">
+                        Get in touch with Cyber Sphere Community. We're here to help and collaborate.
+                    </p>
+                </ScrollReveal>
 
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
                     {/* Left Column: Info */}
-                    <div className="text-left space-y-8">
+                    <div className="text-left space-y-6">
                         <ScrollReveal>
-                            <h2 className="text-brand-accent font-bold tracking-wide uppercase text-sm mb-2">Connect With Us</h2>
-                            <h1 className="text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight uppercase">
-                                LET'S START A <br />
-                                <span className="text-gradient">CONVERSATION.</span>
-                            </h1>
-                        </ScrollReveal>
-
-                        <ScrollReveal delay={0.1}>
-                            <p className="text-slate-600 text-lg leading-relaxed max-w-lg">
+                            <h2 className="text-xl font-bold text-slate-900 mb-2 font-orbitron uppercase">Get in touch</h2>
+                            <p className="text-slate-600 text-sm leading-relaxed">
                                 Have a question about our events, articles, or just want to say hello?
                                 We're here to help and collaborate with fellow security enthusiasts.
                             </p>
                         </ScrollReveal>
 
-                        <ScrollReveal delay={0.2} className="flex flex-col space-y-6">
-                            <div className="group p-6 bg-white rounded-2xl border border-slate-200 shadow-sm transition-all duration-300 transform backdrop-blur-md hover:border-brand-accent/30 hover:shadow-xl">
-                                <div className="flex items-center gap-5">
-                                    <div className="p-3 bg-blue-50 rounded-xl group-hover:bg-blue-100 transition-colors">
-                                        <Mail className="h-6 w-6 text-brand-accent" />
-                                    </div>
-                                    <div>
-                                        <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-1">Email Us</p>
-                                        <a href="mailto:cybersphere.official@outlook.com" className="text-lg sm:text-xl text-slate-800 font-bold hover:text-brand-primary transition-colors break-all">
-                                            cybersphere.official@outlook.com
-                                        </a>
-                                    </div>
+                        <ScrollReveal delay={0.1} className="flex flex-col space-y-4">
+                            <div className="cyber-card p-6 flex items-center gap-5">
+                                <div className="p-3 bg-red-50 text-red-600 border border-red-100">
+                                    <Mail className="h-6 w-6" />
+                                </div>
+                                <div>
+                                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1 font-mono-tech">Email Us</p>
+                                    <a href="mailto:cybersphere.official@outlook.com" className="text-base sm:text-lg text-slate-800 font-bold hover:text-red-600 transition-colors break-all">
+                                        cybersphere.official@outlook.com
+                                    </a>
                                 </div>
                             </div>
 
-                            <div className="group p-6 bg-white rounded-2xl border border-slate-200 shadow-sm transition-all duration-300 transform backdrop-blur-md hover:border-[#0077b5]/30 hover:shadow-xl">
-                                <div className="flex items-center gap-5">
-                                    <div className="p-3 bg-blue-50 rounded-xl group-hover:bg-blue-100 transition-colors">
-                                        <Linkedin className="h-6 w-6 text-[#0077b5]" />
-                                    </div>
-                                    <div>
-                                        <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-1">Follow on LinkedIn</p>
-                                        <a href="https://www.linkedin.com/company/cyber-sphere-369/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="text-lg sm:text-xl text-slate-800 font-bold hover:text-[#0077b5] transition-colors break-all">
-                                            Cyber Sphere
-                                        </a>
-                                    </div>
+                            <div className="cyber-card p-6 flex items-center gap-5">
+                                <div className="p-3 bg-red-50 text-red-600 border border-red-100">
+                                    <Linkedin className="h-6 w-6" />
+                                </div>
+                                <div>
+                                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1 font-mono-tech">Follow on LinkedIn</p>
+                                    <a href="https://www.linkedin.com/company/cyber-sphere-369/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="text-base sm:text-lg text-slate-800 font-bold hover:text-red-600 transition-colors break-all">
+                                        Cyber Sphere
+                                    </a>
                                 </div>
                             </div>
 
-                            <div className="group p-6 bg-white rounded-2xl border border-slate-200 shadow-sm transition-all duration-300 transform backdrop-blur-md hover:border-[#ff0000]/30 hover:shadow-xl">
-                                <div className="flex items-center gap-5">
-                                    <div className="p-3 bg-red-50 rounded-xl group-hover:bg-red-100 transition-colors">
-                                        <Youtube className="h-6 w-6 text-[#ff0000]" />
-                                    </div>
-                                    <div>
-                                        <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-1">Subscribe on YouTube</p>
-                                        <a href="https://www.youtube.com/@CyberSphere-x2e" target="_blank" rel="noopener noreferrer" className="text-lg sm:text-xl text-slate-800 font-bold hover:text-[#ff0000] transition-colors break-all">
-                                            Cyber Sphere
-                                        </a>
-                                    </div>
+                            <div className="cyber-card p-6 flex items-center gap-5">
+                                <div className="p-3 bg-red-50 text-red-600 border border-red-100">
+                                    <Youtube className="h-6 w-6" />
+                                </div>
+                                <div>
+                                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1 font-mono-tech">Subscribe on YouTube</p>
+                                    <a href="https://www.youtube.com/@CyberSphere-x2e" target="_blank" rel="noopener noreferrer" className="text-base sm:text-lg text-slate-800 font-bold hover:text-red-600 transition-colors break-all">
+                                        Cyber Sphere
+                                    </a>
                                 </div>
                             </div>
                         </ScrollReveal>
                     </div>
 
                     {/* Right Column: Form */}
-                    <ScrollReveal delay={0.3} className="lg:pl-10">
-                        <div className="bg-white/80 backdrop-blur-xl border border-white/50 rounded-3xl p-8 sm:p-10 shadow-2xl relative overflow-hidden">
-                            {/* Decorative shiny edge */}
-                            <div className="absolute inset-0 border border-white/40 rounded-3xl pointer-events-none"></div>
-
-                            <h3 className="text-2xl font-extrabold text-slate-900 mb-6 uppercase">SEND A <span className="text-gradient">MESSAGE</span></h3>
+                    <ScrollReveal delay={0.2} className="w-full">
+                        <div className="cyber-card p-8 sm:p-10">
+                            <h3 className="text-2xl font-extrabold text-slate-900 mb-6 uppercase font-orbitron">SEND A MESSAGE</h3>
 
                             <form className="space-y-6">
                                 <div className="space-y-2">
-                                    <label htmlFor="name" className="text-sm font-semibold text-slate-700 ml-1">Full Name</label>
+                                    <label htmlFor="name" className="text-xs font-bold text-slate-700 uppercase tracking-wider font-mono-tech">Full Name</label>
                                     <div className="relative">
                                         <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                             <User className="h-5 w-5 text-slate-400" />
@@ -102,14 +87,14 @@ const Contact = () => {
                                         <input
                                             type="text"
                                             id="name"
-                                            className="w-full pl-12 pr-4 py-4 bg-white/50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-brand-accent transition-all backdrop-blur-sm"
+                                            className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-red-600 transition-all text-sm font-medium"
                                             placeholder="John Doe"
                                         />
                                     </div>
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label htmlFor="email" className="text-sm font-semibold text-slate-700 ml-1">Email Address</label>
+                                    <label htmlFor="email" className="text-xs font-bold text-slate-700 uppercase tracking-wider font-mono-tech">Email Address</label>
                                     <div className="relative">
                                         <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                             <Mail className="h-5 w-5 text-slate-400" />
@@ -117,22 +102,22 @@ const Contact = () => {
                                         <input
                                             type="email"
                                             id="email"
-                                            className="w-full pl-12 pr-4 py-4 bg-white/50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-brand-accent transition-all backdrop-blur-sm"
-                                            placeholder="john@example.com"
+                                            className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-red-600 transition-all text-sm font-medium"
+                                            placeholder="your@email.com"
                                         />
                                     </div>
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label htmlFor="message" className="text-sm font-semibold text-slate-700 ml-1">Your Message</label>
+                                    <label htmlFor="message" className="text-xs font-bold text-slate-700 uppercase tracking-wider font-mono-tech">Your Message</label>
                                     <div className="relative">
-                                        <div className="absolute top-4 left-4 pointer-events-none">
+                                        <div className="absolute top-3 left-4 pointer-events-none">
                                             <MessageSquare className="h-5 w-5 text-slate-400" />
                                         </div>
                                         <textarea
                                             id="message"
-                                            rows={4}
-                                            className="w-full pl-12 pr-4 py-4 bg-white/50 border border-slate-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-brand-accent transition-all backdrop-blur-sm resize-none"
+                                            rows="5"
+                                            className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-red-600 transition-all text-sm font-medium"
                                             placeholder="How can we help you?"
                                         ></textarea>
                                     </div>
@@ -140,18 +125,28 @@ const Contact = () => {
 
                                 <button
                                     type="submit"
-                                    className="w-full btn-primary justify-center text-lg py-4 shadow-lg shadow-blue-500/20 group"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        alert('Thank you for your message! Opening your mail client...');
+                                        const nameVal = document.getElementById('name').value;
+                                        const emailVal = document.getElementById('email').value;
+                                        const msgVal = document.getElementById('message').value;
+                                        const subject = encodeURIComponent(`Inquiry from ${nameVal}`);
+                                        const body = encodeURIComponent(`Name: ${nameVal}\nEmail: ${emailVal}\n\nMessage:\n${msgVal}`);
+                                        window.location.href = `mailto:cybersphere.official@outlook.com?subject=${subject}&body=${body}`;
+                                    }}
+                                    className="btn-cyber-primary w-full py-4 text-xs font-bold font-mono-tech flex items-center justify-center gap-2"
                                 >
-                                    <span>Send Message</span>
-                                    <Send className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                                    <Send className="h-4 w-4" />
+                                    SEND MESSAGE
                                 </button>
                             </form>
                         </div>
                     </ScrollReveal>
-
                 </div>
             </div>
         </div>
     );
 };
+
 export default Contact;

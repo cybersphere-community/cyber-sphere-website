@@ -2,8 +2,6 @@ import { Linkedin, Github, Globe, Mail } from 'lucide-react';
 import SEO from '../components/SEO';
 import ScrollReveal from '../components/ScrollReveal';
 
-
-
 const teamMembers = [
     {
         name: "Harsh Kanojia",
@@ -66,74 +64,78 @@ const Team = () => {
                 keywords="cyber sphere team, core team, volunteers, cybersecurity experts"
             />
 
-            <ScrollReveal className="text-center mb-20">
-                <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 text-slate-900 tracking-tight uppercase">
-                    MEET THE <span className="text-gradient">TEAM</span>
+            {/* Page Header */}
+            <ScrollReveal className="text-center mb-16">
+                <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 text-slate-900 tracking-tight uppercase font-orbitron">
+                    MEET THE TEAM
                 </h1>
-                <p className="text-slate-500 max-w-2xl mx-auto text-lg">
+                <p className="text-slate-500 max-w-2xl mx-auto text-sm">
                     The passionate individuals driving the Cyber Sphere mission forward.
                 </p>
             </ScrollReveal>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Team Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {teamMembers.map((member, index) => (
                     <ScrollReveal
                         key={index}
-                        delay={index % 2 * 0.1}
+                        delay={index % 2 * 0.05}
                         className="h-full"
                     >
-                        <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 hover:border-blue-100 transition-all duration-300 flex flex-col sm:flex-row items-center sm:items-start gap-8 group backdrop-blur-md h-full">
-                            {/* Circular Image */}
-                            <div className="flex-shrink-0 relative">
-                                <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-slate-50 shadow-md group-hover:border-brand-accent transition-colors duration-300">
-                                    <img
-                                        src={member.image}
-                                        alt={member.name}
-                                        loading="lazy"
-                                        width="128"
-                                        height="128"
-                                        className={`w-full h-full object-cover ${member.objectPosition || 'object-center'} transform transition-transform duration-700 group-hover:scale-110`}
-                                    />
-                                </div>
+                        <div className="cyber-card hover:border-red-600 flex flex-col sm:flex-row items-center sm:items-start gap-6 h-full transition-colors duration-150">
+                            {/* Profile Image Square Box */}
+                            <div className="w-28 h-28 sm:w-32 sm:h-32 border border-slate-200 bg-slate-50 p-1 flex items-center justify-center shrink-0">
+                                <img
+                                    src={member.image}
+                                    alt={member.name}
+                                    loading="lazy"
+                                    width="128"
+                                    height="128"
+                                    className={`w-full h-full object-cover ${member.objectPosition || 'object-center'}`}
+                                />
                             </div>
 
-                            {/* Content */}
+                            {/* Info & Content */}
                             <div className="flex-1 text-center sm:text-left w-full flex flex-col h-full">
-                                <h3 className="text-2xl font-bold text-brand-primary mb-1 group-hover:text-brand-accent transition-colors">
+                                <h3 className="text-xl font-bold text-slate-900 mb-1">
                                     {member.name}
                                 </h3>
-                                <p className="text-brand-secondary font-medium mb-1 text-sm uppercase tracking-wide">{member.role}</p>
-                                <p className="text-slate-400 text-sm mb-4 italic">{member.university}</p>
+                                
+                                <span className="cyber-badge cyber-badge-black mr-auto ml-auto sm:ml-0 mb-2">
+                                    {member.role}
+                                </span>
+                                
+                                <p className="text-slate-400 text-xs mb-4 italic">{member.university}</p>
 
                                 {/* Interests / Tags */}
-                                <div className="flex flex-wrap justify-center sm:justify-start gap-2 mb-6">
+                                <div className="flex flex-wrap justify-center sm:justify-start gap-1.5 mb-6">
                                     {member.interests.map((interest, idx) => (
-                                        <span key={idx} className="bg-blue-50 text-brand-accent text-xs font-bold px-3 py-1 rounded-full border border-blue-100">
+                                        <span key={idx} className="cyber-badge cyber-badge-black text-[10px]">
                                             {interest}
                                         </span>
                                     ))}
                                 </div>
 
-                                {/* Social Links - Premium Interactive */}
-                                <div className="team-social-card justify-center sm:justify-start pt-4 border-t border-slate-100 mt-auto">
+                                {/* Social Links - Redesigned Horizontal Sockets */}
+                                <div className="flex items-center justify-center sm:justify-start gap-2 pt-4 border-t border-slate-100 mt-auto">
                                     {member.portfolio && (
-                                        <a href={member.portfolio} target="_blank" rel="noopener noreferrer" className="team-social-container" title="Portfolio">
-                                            <Globe className="team-social-svg" />
+                                        <a href={member.portfolio} target="_blank" rel="noopener noreferrer" className="p-2 border border-slate-200 bg-white text-slate-600 hover:text-red-600 hover:border-slate-450 transition-all" title="Portfolio">
+                                            <Globe className="w-4 h-4" />
                                         </a>
                                     )}
                                     {member.linkedin && (
-                                        <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="team-social-container" title="LinkedIn">
-                                            <Linkedin className="team-social-svg" />
+                                        <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 border border-slate-200 bg-white text-slate-600 hover:text-red-600 hover:border-slate-450 transition-all" title="LinkedIn">
+                                            <Linkedin className="w-4 h-4" />
                                         </a>
                                     )}
                                     {member.github && (
-                                        <a href={member.github} target="_blank" rel="noopener noreferrer" className="team-social-container" title="GitHub">
-                                            <Github className="team-social-svg" />
+                                        <a href={member.github} target="_blank" rel="noopener noreferrer" className="p-2 border border-slate-200 bg-white text-slate-600 hover:text-red-600 hover:border-slate-450 transition-all" title="GitHub">
+                                            <Github className="w-4 h-4" />
                                         </a>
                                     )}
                                     {member.email && (
-                                        <a href={`mailto:${member.email}`} className="team-social-container" title="Email">
-                                            <Mail className="team-social-svg" />
+                                        <a href={`mailto:${member.email}`} className="p-2 border border-slate-200 bg-white text-slate-600 hover:text-red-600 hover:border-slate-450 transition-all" title="Email">
+                                            <Mail className="w-4 h-4" />
                                         </a>
                                     )}
                                 </div>
@@ -145,4 +147,5 @@ const Team = () => {
         </div>
     );
 };
+
 export default Team;

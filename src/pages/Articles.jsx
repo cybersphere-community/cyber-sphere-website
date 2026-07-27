@@ -119,10 +119,10 @@ const Articles = () => {
             />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <ScrollReveal className="text-center mb-16">
-                    <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 text-slate-900 tracking-tight uppercase">
-                        CYBER <span className="text-gradient">INSIGHTS</span>
+                    <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 text-slate-900 tracking-tight uppercase font-orbitron">
+                        CYBER <span className="text-red-600">INSIGHTS</span>
                     </h1>
-                    <p className="text-slate-500 max-w-2xl mx-auto text-lg leading-relaxed mb-8">
+                    <p className="text-slate-500 max-w-2xl mx-auto text-sm leading-relaxed mb-8">
                         Deep dives into cybersecurity, cloud defense, and threat evasion.
                         Aggregation of articles from Dev.to and Medium.
                     </p>

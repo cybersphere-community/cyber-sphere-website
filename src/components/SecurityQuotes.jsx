@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import { Quote } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
-
-
 const quotes = [
     { text: "Security is not a product, but a process.", author: "Bruce Schneier" },
     { text: "The only truly secure system is one that is powered off, cast in a block of concrete and sealed in a lead-lined room with armed guards.", author: "Gene Spafford" },
@@ -33,32 +31,32 @@ const SecurityQuotes = () => {
 
     return (
         <ScrollReveal className="w-full max-w-5xl mx-auto px-4 relative group">
-            {/* Background Decor */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-blue-100 via-transparent to-red-50 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+            <div className="relative bg-slate-50 border border-slate-200 p-8 md:p-12 flex flex-col items-center text-center">
+                {/* Decorative Technical Borders */}
+                <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-slate-900"></div>
+                <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-slate-900"></div>
+                <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-slate-900"></div>
+                <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-slate-900"></div>
 
-            <div className="relative bg-white rounded-2xl p-8 md:p-12 shadow-card border border-slate-100 flex flex-col items-center text-center backdrop-blur-md">
-                <div className="mb-6 relative">
-                    <div className="absolute -top-4 -left-6 opacity-10">
-                        <Quote size={60} className="text-brand-accent transform -scale-x-100" />
-                    </div>
-                    <Quote size={40} className="text-brand-accent opacity-20 relative z-10" />
+                <div className="mb-4">
+                    <Quote size={30} className="text-slate-900 opacity-20" />
                 </div>
 
-                <div className={`transition-all duration-500 ease-in-out transform ${fade ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                    <p className="text-xl md:text-3xl text-slate-700 font-medium leading-relaxed mb-6 max-w-3xl mx-auto font-sans">
+                <div className={`transition-all duration-500 ease-in-out transform ${fade ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+                    <p className="text-lg md:text-2xl text-slate-900 font-medium leading-relaxed mb-6 max-w-3xl mx-auto">
                         "{quotes[currentIndex].text}"
                     </p>
                     <div className="flex items-center justify-center gap-3">
-                        <div className="h-px w-12 bg-gradient-to-r from-transparent to-slate-300"></div>
-                        <p className="text-brand-primary font-bold text-sm tracking-[0.2em] uppercase font-orbitron">
+                        <div className="h-[1px] w-6 bg-slate-300"></div>
+                        <p className="text-slate-900 font-bold text-xs tracking-wider uppercase font-mono-tech">
                             {quotes[currentIndex].author}
                         </p>
-                        <div className="h-px w-12 bg-gradient-to-l from-transparent to-slate-300"></div>
+                        <div className="h-[1px] w-6 bg-slate-300"></div>
                     </div>
                 </div>
 
-                {/* Indicators */}
-                <div className="flex gap-2 mt-8">
+                {/* Indicators - Technical ticks */}
+                <div className="flex gap-1.5 mt-8">
                     {quotes.map((_, idx) => (
                         <button
                             key={idx}
@@ -69,9 +67,9 @@ const SecurityQuotes = () => {
                                     setFade(true);
                                 }, 300);
                             }}
-                            className={`h-1.5 rounded-full transition-all duration-300 ${idx === currentIndex
-                                    ? 'w-8 bg-brand-accent'
-                                    : 'w-2 bg-slate-200 hover:bg-slate-300'
+                            className={`h-1.5 transition-all duration-150 ${idx === currentIndex
+                                    ? 'w-6 bg-red-600'
+                                    : 'w-1.5 bg-slate-300 hover:bg-slate-500'
                                 }`}
                             aria-label={`Go to quote ${idx + 1}`}
                         />
